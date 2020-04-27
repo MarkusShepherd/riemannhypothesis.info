@@ -1,0 +1,11 @@
+---
+title: Books on the Riemann Hypothesis
+author: Markus Shepherd
+type: page
+date: 2013-10-09T16:49:42+00:00
+
+---
+  * ★★★★★ <a title="Buy the book on amazon.co.uk" href="http://www.amazon.co.uk/gp/product/1841155802/ref=as_li_tf_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=1841155802&linkCode=as2&tag=riemannhypo-21" target="_blank"><em>The Music of the Primes</em></a> by **Marcus du Sautoy**: Probably the best account on mathematics written for a broad audience. Captivating and insightful. If you're interested in the topic, there's basically no way around reading this. And for those that are afraid of maths: it's virtually free of formulae, but explains in great metaphors the beauty of the prime numbers and the significance the Riemann Hypothesis plays for them.
+  * ★★★★★ <a title="Buy the book on amazon.co.uk" href="http://www.amazon.co.uk/gp/product/0452285259/ref=as_li_tf_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0452285259&linkCode=as2&tag=riemannhypo-21" target="_blank"><em>Prime Obsession</em></a> by **John Derbyshire**: More mathematically ambitious than _The Music of the Primes_, but still targeted at the general public (mostly successfully, I think), this is the natural follow-up if Marcus du Sautoy got you hooked up, but left you alone with the maths. John Derbyshire does not flinch from doing actual maths (though he keeps calculus to a minimum), and generally succeeds in explaining the mathematical background of the Riemann Hypothesis to non-mathematicians -- this alone makes the book worth reading. The anecdotes, stories, and historical notes on the Riemann Hypothesis are a nice bonus, including to the most comprehensive account on Bernhard Riemann's life known to me.
+  * ★★★★☆ <a title="Buy the book on amazon.co.uk" href="http://www.amazon.co.uk/gp/product/0486417409/ref=as_li_tf_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0486417409&linkCode=as2&tag=riemannhypo-21" target="_blank"><em>Riemann's Zeta Function</em></a> by **H.M. Edwards**
+  * ★★★☆☆ <a title="Buy the book on amazon.co.uk" href="http://www.amazon.co.uk/gp/product/1843541017/ref=as_li_tf_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=1843541017&linkCode=as2&tag=riemannhypo-21" target="_blank"><em>Dr. Riemann's Zeros</em></a> by **Karl Sabbagh**

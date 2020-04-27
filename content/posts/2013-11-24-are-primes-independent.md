@@ -1,0 +1,105 @@
+---
+title: Are Primes Independent?
+author: Markus Shepherd
+type: post
+date: 2013-11-24T14:32:23+00:00
+url: /2013/11/are-primes-independent/
+categories:
+  - Probability
+tags:
+  - Conjecture
+  - Gauss
+  - Hardy
+  - Littlewood
+  - Prime number theorem
+  - Probability
+  - Twin primes
+
+---
+The question may sound silly, but I hope it will become apparent that it's very reasonable to ask. What we will examine here is the _probabilistic interpretation_ of the prime distribution. So, essentially we ask: "What's the probability that a randomly chosen number is prime?" Those familiar with some basic probability theory know the notion of independency in this context, so the question I'm basically interested in here is if the probability to find a prime is independent of the preceding or following numbers. This post is a little out of the regular narrative, but it's something I have been thinking about recently, and I think it makes a cute article.
+
+But one step back. First consider the following problem: We pick a number <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_02129bb861061d1a052c592e2dc6b383.gif' style='vertical-align: middle; border: none; padding-bottom:1px;' class='tex' alt="" /></span> not exceeding some (large) <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_7b8b965ad4bca0e41ab51de7b31363a1.gif' style='vertical-align: middle; border: none; padding-bottom:2px;' class='tex' alt="" /></span> at random. What are the odds this number is prime? Well, this is a classic example of a discrete probability, so the answer is _positive cases over all cases_, i.e.,
+
+<p style='text-align:center;'>
+  <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_c7d1d2f1e697a34aac37aa39fa7fd198.gif' style='vertical-align: middle; border: none;' class='tex' alt="" /></span>
+</p>
+
+where <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_a5eeed6164a1f2266935b6cc6859ae99.gif' style='vertical-align: middle; border: none; padding-bottom:1px;' class='tex' alt="" /></span> denotes the set of all primes, and <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_bb11019dbf0bb779bd6788eb81561b14.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span> is the prime counting function, i.e., the number of primes not exceeding <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_7b8b965ad4bca0e41ab51de7b31363a1.gif' style='vertical-align: middle; border: none; padding-bottom:2px;' class='tex' alt="" /></span>. Now, the famous Prime Number Theorem states that we can approximate <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_bb11019dbf0bb779bd6788eb81561b14.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span> with the elementary function
+
+<p style='text-align:center;'>
+  <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_020021dcad9f3c51fbadd5377a2e94b0.gif' style='vertical-align: middle; border: none;' class='tex' alt="" /></span>
+</p>
+
+Don't worry too much about the exact meaning of the tilde, we will have plenty of opportunity to examine it further. For now just read it as "the left-hand side behaves similarly to the right-hand side". Now we can substitute this approximation in the calculation of the probability above, and obtain
+
+<p style='text-align:center;'>
+  <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_4a6e67669fb012bc2d3949502bbac728.gif' style='vertical-align: middle; border: none;' class='tex' alt="" /></span>
+</p>
+
+<!--more-->
+
+In other words, a randomly chosen number between <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_c4ca4238a0b923820dcc509a6f75849b.gif' style='vertical-align: middle; border: none; padding-bottom:1px;' class='tex' alt="" /></span> and <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_7b8b965ad4bca0e41ab51de7b31363a1.gif' style='vertical-align: middle; border: none; padding-bottom:2px;' class='tex' alt="" /></span> is prime with probability roughly <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_2c385c2252345ba9b69d014c2d5325d0.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span>. What's more, we can even justify saying that a number "around a large <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_7b8b965ad4bca0e41ab51de7b31363a1.gif' style='vertical-align: middle; border: none; padding-bottom:2px;' class='tex' alt="" /></span>" is prime with probability <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_2c385c2252345ba9b69d014c2d5325d0.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span>. To illustrate, take <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_4a6896af550d30a20997775d46dc499d.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span>, a <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_c4ca4238a0b923820dcc509a6f75849b.gif' style='vertical-align: middle; border: none; padding-bottom:1px;' class='tex' alt="" /></span> followed by 100 zeros. (And that is still a small number in the context of number theory.) Below it, there are of course plenty of numbers with 99 digits or less, but obviously 90% of the numbers up to <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_4a6896af550d30a20997775d46dc499d.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span> have 100 digits. This means that the vast majority of the weight in the above probability lies on these numbers, justifying the statement.
+
+In fact, we can see that we're right in interpreting <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_2c385c2252345ba9b69d014c2d5325d0.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span> as the probability that <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_7b8b965ad4bca0e41ab51de7b31363a1.gif' style='vertical-align: middle; border: none; padding-bottom:2px;' class='tex' alt="" /></span> is prime in a much more rigorous way. In the terms of probability theory, it means that <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_2c385c2252345ba9b69d014c2d5325d0.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span> is something like the density function associated with our experiment. (Actually, it would need to be normalised, but let's not concern ourselves with that.) So, in order to get the number of all primes up to <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_7b8b965ad4bca0e41ab51de7b31363a1.gif' style='vertical-align: middle; border: none; padding-bottom:2px;' class='tex' alt="" /></span>, we would need to sum up all these weights. Since we have a continuous function, we use the integral instead, and arrive at another estimate
+
+<p style='text-align:center;'>
+  <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_2e87291508045afc4a9764348c210b64.gif' style='vertical-align: middle; border: none;' class='tex' alt="" /></span>
+</p>
+
+The function on the right-hand side is known as <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_e5490732179344fb25576e21a3a0839e.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span>, and was already examined by Gauss. The two approximations <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_38b3cce9e6689c72f6606c2ce0f3c879.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span> and <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_e5490732179344fb25576e21a3a0839e.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span> for <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_bb11019dbf0bb779bd6788eb81561b14.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span> are in a certain sense equivalent (just do a partial integration, if you're curious), but as it turns out, <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_e5490732179344fb25576e21a3a0839e.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span> is empirically more accurate, predicting the distribution of primes with very small relative errors.
+
+But I've gone astray a little. We wanted to know if primes are independent. Well, you may point out that obviously they're not: if <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_02129bb861061d1a052c592e2dc6b383.gif' style='vertical-align: middle; border: none; padding-bottom:1px;' class='tex' alt="" /></span> is a (large) prime, then it is odd, so <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_dccb0e31b7d4f2e1bb1c67ded1f35478.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span> is even and hence composite. But <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_35de5b6d6fe0b7a0800acf26dc00d638.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span> may be prime, and indeed there is an abundance of examples where both <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_02129bb861061d1a052c592e2dc6b383.gif' style='vertical-align: middle; border: none; padding-bottom:1px;' class='tex' alt="" /></span> and <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_35de5b6d6fe0b7a0800acf26dc00d638.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span> are prime. These are called _twin primes_, and it is an open question if there are infinitely many of them. (Most mathematician would believe so, and we will make use of one more qualified conjecture in just a moment.)
+
+After examining "single" primes, we may now ask how many many twin primes there are less than a given number. This number is usually denoted by <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_6dca61b7c69370345dd9d4f2be4bfca9.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span>. What we are interested in for this article is the question: _What is the probability that <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_35de5b6d6fe0b7a0800acf26dc00d638.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span> is prime if we already know that <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_02129bb861061d1a052c592e2dc6b383.gif' style='vertical-align: middle; border: none; padding-bottom:1px;' class='tex' alt="" /></span> is prime?_ Mathematically speaking, we want to calculate (or at least estimate) the conditional probability <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_6c165baf28d7277590e34efca72b0b2c.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span>.
+
+Two events <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_7fc56270e7a70fa81a5935b72eacbe29.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span> and <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_9d5ed678fe57bcca610140957afab571.gif' style='vertical-align: middle; border: none; padding-bottom:1px;' class='tex' alt="" /></span> are said to be (stochastically) independent if <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_298684ebcc2fb6b022d40421271abeb6.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span>, or in other words, if knowledge about event <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_9d5ed678fe57bcca610140957afab571.gif' style='vertical-align: middle; border: none; padding-bottom:1px;' class='tex' alt="" /></span> yields no further information about event <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_7fc56270e7a70fa81a5935b72eacbe29.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span>.<sup id="rf1-129"><a href="#fn1-129" title="This is not quite the accurate definition, but it&#039;s the intuition behind it.&nbsp;Correctly, A and B are independent iff&nbsp;P(A and B) = P(A) P(B)." rel="footnote">1</a></sup>
+
+Now, by just applying the definition of how to calculate a conditional probability above, we obtain
+
+<p style='text-align:center;'>
+  <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_8a9ce81ecda70555c3cd7a7258651ed0.gif' style='vertical-align: middle; border: none;' class='tex' alt="" /></span>
+</p>
+
+But the numerator is just the probability that we found a twin prime pair, and the denominator we already examined. This yields
+
+<p style='text-align:center;'>
+  <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_b9a0922eb7ab749065fd678112490722.gif' style='vertical-align: middle; border: none;' class='tex' alt="" /></span>
+</p>
+
+We could affirm the above question about independence if <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_6c165baf28d7277590e34efca72b0b2c.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span> would equal <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_f2b979c638d5997b314294e3d69325d4.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span>, or behave as <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_2c385c2252345ba9b69d014c2d5325d0.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span> as well. Given our last equation, this would be the case if could approximate <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_6dca61b7c69370345dd9d4f2be4bfca9.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span> by <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_ca7fb10576185a406b95788158953c79.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span>. Indeed, Hardy and Littlewood conjectured for the distribution of twin primes
+
+<p style='text-align:center;'>
+  <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_4959854ec845efc8a7e3420d8be1d232.gif' style='vertical-align: middle; border: none;' class='tex' alt="" /></span>
+</p>
+
+This is well supported by calculations, but still far from being proved. But let's assume for a minute that this is accurate, then it yields the approximation
+
+<p style='text-align:center;'>
+  <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_a4a5d32f4862d98379aa8f813fbbb825.gif' style='vertical-align: middle; border: none;' class='tex' alt="" /></span>
+</p>
+
+So the primes would indeed be independent if the constant <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_0d61f8370cad1d412f80b84d143e1257.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span> would have value <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_c4ca4238a0b923820dcc509a6f75849b.gif' style='vertical-align: middle; border: none; padding-bottom:1px;' class='tex' alt="" /></span>. When I first research this, I got quite excited, as most often the value for <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_0d61f8370cad1d412f80b84d143e1257.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span> would be given as <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_be1d2c2151bb1ebf7bfeed1dae8887ef.gif' style='vertical-align: middle; border: none; padding-bottom:1px;' class='tex' alt="" /></span>. This would mean that the two events would not be independent, but indeed it would be _more_ likely to find a prime two spots after another one than at a random spot! In other words, primes would have a strong tendency to cluster together.
+
+But alas, I misread the data. I have been sloppy in defining <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_6dca61b7c69370345dd9d4f2be4bfca9.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span> above, and so are most sources. What's usually counted is the total number of primes of the form <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_7b8b965ad4bca0e41ab51de7b31363a1.gif' style='vertical-align: middle; border: none; padding-bottom:2px;' class='tex' alt="" /></span> and <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_9c79b95bd5c976488be3eb116502d690.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span>, but we are only interested in the number of _pairs_. So indeed we need to cut the constant in half. More concretely, the conjectured constant is the _twin prime constant_
+
+<p style='text-align:center;'>
+  <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_6e766584a7b16d7c0be04e17f88aec83.gif' style='vertical-align: middle; border: none;' class='tex' alt="" /></span>
+</p>
+
+This means the answer is _no_, primes are not independent. The probability of finding a prime two spots after another one is (conjectured to be)
+
+<p style='text-align:center;'>
+  <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_3e4b6a6b471b3ad29ae352441c1222b8.gif' style='vertical-align: middle; border: none;' class='tex' alt="" /></span>
+</p>
+
+Well, would have been too good to be true...
+
+<hr class="footnotes" />
+
+<ol class="footnotes">
+  <li id="fn1-129">
+    <p>
+      This is not quite the accurate definition, but it's the intuition behind it. Correctly, A and B are independent iff <em>P</em>(<em>A</em> and <em>B</em>) = <em>P</em>(<em>A</em>) <em>P</em>(<em>B</em>).&nbsp;<a href="#rf1-129" class="backlink" title="Jump back to footnote 1 in the text.">&#8617;</a>
+    </p>
+  </li>
+</ol>

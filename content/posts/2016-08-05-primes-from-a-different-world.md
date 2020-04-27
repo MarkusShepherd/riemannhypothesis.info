@@ -1,0 +1,64 @@
+---
+title: Primes from a Different World
+author: Markus Shepherd
+type: post
+date: 2016-08-05T15:38:11+00:00
+url: /2016/08/primes-from-a-different-world/
+categories:
+  - Primes
+tags:
+  - algebraic number theory
+  - factorisation
+  - Fermat’s Last Theorem
+  - Fundamental Theorem
+  - Gauss
+  - Gaussian integer
+  - integers
+  - Kummer
+  - Lamé
+  - Number theory
+  - prime
+  - unique prime factorisation
+  - Wiles
+
+---
+Every textbook on number theory will begin with a treatise on prime numbers; every treatise on prime numbers will begin by emphasising their importance as building blocks or atoms of our number system: every integer can be expressed as a product of prime numbers in one way _and one way only_. Six is two times three and there is no other way to decompose it.<sup id="rf1-849"><a href="#fn1-849" title="Yes, you can write 12 as 3*4 or 2*6, but you can continue either way and eventually reach the unambiguous 2*2*3." rel="footnote">1</a></sup> Euclid proved this over two thousand years ago and it is so fundamental (hence the name _fundamental theorem of arithmetic_) to our thinking about numbers that we take it for granted. It is not!
+
+There are numbers that behave very much like the integers but have a different structure. One rather simple example are the Gaussian integers (usually denoted <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_c473ca26e06a8555ab953bd8fd7a2f0b.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span>) which look just like complex numbers <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_ca2af66001a5f8f08a940e0de92fccdb.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span>, except that <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_9dd4e461268c8034f5c8564e155c67a6.gif' style='vertical-align: middle; border: none; padding-bottom:2px;' class='tex' alt="" /></span> and <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_415290769594460e2e485922904f345d.gif' style='vertical-align: middle; border: none; padding-bottom:1px;' class='tex' alt="" /></span> are restricted to integer values. They live in the complex plane, but exclusively on a discrete grid amongst their continuous cousins.
+
+[<img class="aligncenter wp-image-851 size-medium" src="http://localhost:8885/riemannhypothesis.info/wp-content/uploads/2016/08/Gaussian_integer_lattice.svg_-300x225.png" alt="Gaussian_integer_lattice.svg" width="300" height="225" srcset="http://localhost:8885/riemannhypothesis.info/wp-content/uploads/2016/08/Gaussian_integer_lattice.svg_-300x225.png 300w, http://localhost:8885/riemannhypothesis.info/wp-content/uploads/2016/08/Gaussian_integer_lattice.svg_-768x577.png 768w, http://localhost:8885/riemannhypothesis.info/wp-content/uploads/2016/08/Gaussian_integer_lattice.svg_-1024x769.png 1024w, http://localhost:8885/riemannhypothesis.info/wp-content/uploads/2016/08/Gaussian_integer_lattice.svg_.png 1280w" sizes="(max-width: 300px) 100vw, 300px" />][1]<!--more-->
+
+Every ordinary integer is also a Gaussian integer (think <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_8466d5a72eab2367a237354738398e3b.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span>); other examples include <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_865c0c0b4ab0e063e5caa3387c1a8741.gif' style='vertical-align: middle; border: none; padding-bottom:1px;' class='tex' alt="" /></span>, <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_7a8976e0ac1a65a70daacbd00b32dd2d.gif' style='vertical-align: middle; border: none; padding-bottom:1px;' class='tex' alt="" /></span>, <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_1662906b42c0ef6d289e48db87c331cf.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span>, <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_2a8212ff191b526a10f2aeec031569f5.gif' style='vertical-align: middle; border: none; padding-bottom:1px;' class='tex' alt="" /></span>, etc. Just as with the integers we can start decomposing numbers as products and develop a notion of primality. Our first important observation is that <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_c81e728d9d4c2f636f067f89cc14862c.gif' style='vertical-align: middle; border: none; padding-bottom:1px;' class='tex' alt="" /></span> is no longer prime! It decompose to <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_967859eaa839f4dc5744660b84d2db0b.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span>. On the other hand, <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_eccbc87e4b5ce2fe28308fd9f2a7baf3.gif' style='vertical-align: middle; border: none; padding-bottom:1px;' class='tex' alt="" /></span> is still prime as a Gaussian integer. But as it turns out, other than losing a few primes and gaining a few new ones, the Gaussian numbers are still very well behaved and have most of the properties the integers have, including unique prime factorisation. The primes in <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_c473ca26e06a8555ab953bd8fd7a2f0b.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span> make pretty pictures:
+
+[<img class="aligncenter size-full wp-image-856" src="http://localhost:8885/riemannhypothesis.info/wp-content/uploads/2016/08/Gauss-primes-768x768.png" alt="Gauss-primes-768x768" width="768" height="768" srcset="http://localhost:8885/riemannhypothesis.info/wp-content/uploads/2016/08/Gauss-primes-768x768.png 768w, http://localhost:8885/riemannhypothesis.info/wp-content/uploads/2016/08/Gauss-primes-768x768-150x150.png 150w, http://localhost:8885/riemannhypothesis.info/wp-content/uploads/2016/08/Gauss-primes-768x768-300x300.png 300w" sizes="(max-width: 768px) 100vw, 768px" />][2]
+
+Things change when we consider a different set of numbers which we'll denote <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_f4ee9b37089540e2ebd53f50e624f9f2.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span>. They are of the form <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_a48399236415604632b9c46e0f8c097b.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span> and have a surprise in store: Looking at the decomposition of <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_1679091c5a880faf6fb5e6087eb1b2dc.gif' style='vertical-align: middle; border: none; padding-bottom:1px;' class='tex' alt="" /></span>, we can of course still do <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_c901c818832d7cc1f87c4eb496900f31.gif' style='vertical-align: middle; border: none; padding-bottom:1px;' class='tex' alt="" /></span>, but we also have <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_f4b20fcc5e03944e1f72a75436b508a7.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span>. Maybe this does not surprise you – after all we've already seen that some of our beloved primes decompose in some other systems such as <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_c81e728d9d4c2f636f067f89cc14862c.gif' style='vertical-align: middle; border: none; padding-bottom:1px;' class='tex' alt="" /></span> does in the Gaussian integers. The difference here is that neither <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_c81e728d9d4c2f636f067f89cc14862c.gif' style='vertical-align: middle; border: none; padding-bottom:1px;' class='tex' alt="" /></span> nor <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_eccbc87e4b5ce2fe28308fd9f2a7baf3.gif' style='vertical-align: middle; border: none; padding-bottom:1px;' class='tex' alt="" /></span> decompose in<span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_f4ee9b37089540e2ebd53f50e624f9f2.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span> – we have found a truly different decomposition! This proves that our new set of numbers does not have a unique prime factorisation.
+
+What I've given you is a small taster of _algebraic number theory_. It's the regular follow up course to the introduction or elementary course and will teach you that much of the regular behaviour of the integers can be restored if you move from considering numbers to ideals. But that's way beyond the scope of this article.
+
+Now, you may find all these “new” numbers esoteric if not abstract nonsense. But they do have broad applications – within mathematics, of course. In fact, these rings or domains we call <span class='MathJax_Preview'><img src='http://localhost:8885/riemannhypothesis.info/wp-content/plugins/latex/cache/tex_32a7ab3d27f8aad786d2d379f1f32f8f.gif' style='vertical-align: middle; border: none; ' class='tex' alt="" /></span> first emerged in the study of Fermat’s Last Theorem at the end of the 19th century. After a prize has been announced for its solution by the French Academy of Science the highly reputed mathematic Gabriel Lamé announced a proof within a year. His approach used the kind of numbers I introduced here, but was destroyed by Ernst Kummer when he pointed out that the proof implicitly relied on the unique factorisation property they don't necessarily have. Lamé’s assaults were cancelled<sup id="rf2-849"><a href="#fn2-849" title="Which is not to say the work was in vain: Kummer developed said ideal theory and used it to prove a large (in fact, infinite) number of cases of Fermat&rsquo;s Last Theorem. The study of our new number friends developed in the meantime their own ever more abstract life which has little to do with number theory and is in my humble opinion nothing but tedious and boring." rel="footnote">2</a></sup> and it would take another century before Andrew Wiles would take algebraic number theory to a completely new level. But that is way beyond the scope of this post.<sup id="rf3-849"><a href="#fn3-849" title="If you are interested in the whole story, there&#039;s no better (popular) source than Simon Singh&rsquo;s book." rel="footnote">3</a></sup>
+
+<hr class="footnotes" />
+
+<ol class="footnotes">
+  <li id="fn1-849">
+    <p>
+      Yes, you can write 12 as 3*4 or 2*6, but you can continue either way and eventually reach the unambiguous 2*2*3.&nbsp;<a href="#rf1-849" class="backlink" title="Jump back to footnote 1 in the text.">&#8617;</a>
+    </p>
+  </li>
+  
+  <li id="fn2-849">
+    <p>
+      Which is not to say the work was in vain: Kummer developed said ideal theory and used it to prove a large (in fact, infinite) number of cases of Fermat’s Last Theorem. The study of our new number friends developed in the meantime their own ever more abstract life which has little to do with number theory and is in my humble opinion nothing but tedious and boring.&nbsp;<a href="#rf2-849" class="backlink" title="Jump back to footnote 2 in the text.">&#8617;</a>
+    </p>
+  </li>
+  
+  <li id="fn3-849">
+    <p>
+      If you are interested in the whole story, there's no better (popular) source than <a href="http://www.amazon.co.uk/gp/product/1841157910/ref=as_li_tf_tl?ie=UTF8&amp;camp=1634&amp;creative=6738&amp;creativeASIN= 1841157910&amp;linkCode=as2&amp;tag=riemannhypo-21" target="_blank">Simon Singh’s book</a>.&nbsp;<a href="#rf3-849" class="backlink" title="Jump back to footnote 3 in the text.">&#8617;</a>
+    </p>
+  </li>
+</ol>
+
+ [1]: http://localhost:8885/riemannhypothesis.info/wp-content/uploads/2016/08/Gaussian_integer_lattice.svg_.png
+ [2]: http://localhost:8885/riemannhypothesis.info/wp-content/uploads/2016/08/Gauss-primes-768x768.png
