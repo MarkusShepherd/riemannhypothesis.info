@@ -58,7 +58,7 @@ pct = 100 * count / repetitions
 print(f"{count} out of {repetitions} pairs were coprime ({pct:.3f}%)")
 ```
 
-This will pick two (largish) integers at random ((I was (deliberately) vague when saying _choose two random numbers_. There is no way of choosing two _arbitrarily large_ integers uniformly at random, so what you need to do is pick an upper bound _N_ and choose numbers below _N_ uniformly at random. In the calculations of the probabilities you'd take the limit _N_ → ∞. But we'll be hand-waving to begin with, so no reason to be exact here.)), check if they are coprime – which is the same as saying that they're greatest common divisor (_gcd_) is \\(1\\) – and repeat the procedure 100 million times. At the end, it will print something like this:
+This will pick two (largish) integers at random[^uniform], check if they are coprime – which is the same as saying that they're greatest common divisor (_gcd_) is \\(1\\) – and repeat the procedure 100 million times. At the end, it will print something like this:
 
 ```
 60797595 out of 100000000 pairs were coprime (60.798%)
@@ -134,6 +134,9 @@ As I said before, I'm still puzzled every time I work on this how the trigonomet
 
 Euler's solution I presented here lacks some form of rigour since he couldn't prove that the product representation actually converges, but his manipulations as formal identities not only solved the famous Basel problem correctly, it can actually do lot more. When multiplying out the product above I ignored any terms higher than \\(x^2\\). However, if you do carry out these calculations you'll get expressions in \\(\sum 1/k^{2n}\pi^{2n}\\), so you'll obtain similar results for all \\(\zeta(2n)\\). The exact calculations are well beyond our scope here, but it's worth noticing that Euler solved the values of \\(\zeta(2n)\\) for all even integers, and in particular we know therefore that all \\(\zeta(2n)\\) are irrational and even transcendental numbers since they are expressions in \\(\pi^{2n}\\). You might ask: what about odd arguments \\(\zeta(2n+1)\\)?
 
-Somewhat surprisingly the answer is: very little. It wasn't until 1978 that Roger Apéry proved that \\(\zeta(3)=\sum n^{-3}\\), a number that's now referred to as _Apéry's constant_, is irrational. No other value of \\(\zeta(2n+1)\\) is known to be irrational ((Some progress has been made, but no single value has been cracked so far.)) (or rational for that matter), let alone any nice closed form like we had with \\(\zeta(2)=\pi^2/6\\).
+Somewhat surprisingly the answer is: very little. It wasn't until 1978 that Roger Apéry proved that \\(\zeta(3)=\sum n^{-3}\\), a number that's now referred to as _Apéry's constant_, is irrational. No other value of \\(\zeta(2n+1)\\) is known to be irrational[^irrational] (or rational for that matter), let alone any nice closed form like we had with \\(\zeta(2)=\pi^2/6\\).
 
 I'll leave you with the somewhat comforting note that Apéry was of the almost biblical age (for a mathematician) of over 60 years when he made his breakthrough. Mathematics is often called "a young men's discipline" – you either make a significant contribution before you reach tenure or you never will. Roger Apéry is one counter-example, Andrew Wiles and Yitang Zhang are others. It's never too late to start working on that one big theorem!
+
+[^uniform]: I was (deliberately) vague when saying _choose two random numbers_. There is no way of choosing two _arbitrarily large_ integers uniformly at random, so what you need to do is pick an upper bound \\(N\\) and choose numbers below \\(N\\) uniformly at random. In the calculations of the probabilities you'd take the limit \\(N\to\infty\\). But we'll be hand-waving to begin with, so no reason to be exact here.
+[^irrational]: Some progress has been made, but no single value has been cracked so far.
