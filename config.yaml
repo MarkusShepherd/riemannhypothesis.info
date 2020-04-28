@@ -81,23 +81,23 @@ menu:
       weight: 20
     - name: Recommend.Games
       parent: projects
-      url: recommend-games/
+      url: projects/recommend-games/
       weight: 10
     - name: Diris
       parent: projects
-      url: diris/
+      url: projects/diris/
       weight: 20
     - name: Mathematical papers
       parent: projects
-      url: mathematical-papers/
+      url: projects/mathematical-papers/
       weight: 30
     - name: Ricochet Robots solver
       parent: projects
-      url: ricochet-robots-solver/
+      url: projects/ricochet-robots-solver/
       weight: 40
     - name: TeXCVMaker
       parent: projects
-      url: texcvmaker/
+      url: projects/texcvmaker/
       weight: 50
 
     - name: Recommended books
