@@ -33,7 +33,7 @@ Params:
   rss: true
   comments: true
   # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
-  # gcse: 013480686921635014344:zokjfkkzyza
+  gcse: 013480686921635014344:vv4rosnmixf
   readingTime: true
   wordCount: true
   useHLJS: true
@@ -43,10 +43,12 @@ Params:
 Author:
   name: Markus Shepherd
   email: markus@recommend.games
+  website: https://recommend.games/
   facebook: markus.r.shepherd
   # googleplus: +username # or xxxxxxxxxxxxxxxxxxxxx
   gitlab: mshepherd
   github: MarkusShepherd
+  bitbucket: MarkusShepherd
   twitter: MarkusRShepherd
   reddit: MarkusShepherd
   linkedin: markusschepke
@@ -60,6 +62,9 @@ Author:
   # bandcamp: username
   # itchio: username
   # keybase: username
+  vk: mshepherd
+  paypal: mschepke
+  kaggle: mshepherd
 
 menu:
   main:
