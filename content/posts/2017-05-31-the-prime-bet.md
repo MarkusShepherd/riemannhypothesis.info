@@ -37,7 +37,9 @@ Apart from the question what kind of establishments you frequent, you should be 
 
 When two integers have no divisors in common except the trivial divisor \\(1\\) we say they are _coprime_ or _relatively prime_. \\(6\\) and \\(9\\) have the common divisor \\(3\\), so they are _not_ coprime, whilst \\(8\\) and \\(9\\) only have the trivial common divisor \\(1\\), so they are coprime.
 
-This makes you start thinking: "As numbers grow bigger, aren't there a lot of divisors out there? After all, half the numbers are even, so if we hit two even numbers, they'll have the factor \\(2\\) in common and I'll win. And then there's \\(3\\), \\(5\\), \\(7\\), ... Seems like a good deal!"<!-- more -->
+This makes you start thinking: "As numbers grow bigger, aren't there a lot of divisors out there? After all, half the numbers are even, so if we hit two even numbers, they'll have the factor \\(2\\) in common and I'll win. And then there's \\(3\\), \\(5\\), \\(7\\), ... Seems like a good deal!"
+
+<!-- more -->
 
 Is it, though? Let's do some experiments! This simply Python script should give a decent approximation:
 
@@ -46,16 +48,14 @@ from math import gcd
 from random import randint
 from sys import maxsize
 
-repetitions = 10**8
-count = sum(1 if gcd(randint(1, maxsize),
-                     randint(1, maxsize)) == 1
-            else 0
-            for _ in range(repetitions))
+repetitions = 10 ** 8
+count = sum(
+    1 if gcd(randint(1, maxsize), randint(1, maxsize)) == 1 else 0
+    for _ in range(repetitions)
+)
+pct = 100 * count / repetitions
 
-print('{count:d} out of {repetitions:d} pairs were coprime ({pct:.3f}%)'
-      .format(count=count,
-              repetitions=repetitions,
-              pct=100 * count / repetitions))
+print(f"{count} out of {repetitions} pairs were coprime ({pct:.3f}%)")
 ```
 
 This will pick two (largish) integers at random ((I was (deliberately) vague when saying _choose two random numbers_. There is no way of choosing two _arbitrarily large_ integers uniformly at random, so what you need to do is pick an upper bound _N_ and choose numbers below _N_ uniformly at random. In the calculations of the probabilities you'd take the limit _N_ → ∞. But we'll be hand-waving to begin with, so no reason to be exact here.)), check if they are coprime – which is the same as saying that they're greatest common divisor (_gcd_) is \\(1\\) – and repeat the procedure 100 million times. At the end, it will print something like this:
@@ -90,7 +90,11 @@ We'll obtain two series representations of \\(\sin x\\) and compare them with on
 
 where \\( n! \\) is the factorial function and \\(f^{(n)}(0)\\) is the \\(n\\)-th derivative of \\(f\\) evaluated at \\(x=0\\). The derivates of \\(f(x)=\sin x\\) are about as easy as they get:
 
-\\[ \begin{align} f(x) = f^{(0)}(x) &= \sin x, \nonumber \\ f^{(1)}(x) &= \cos x \nonumber \\ f^{(2)}(x) &= -\sin x \nonumber \\ f^{(3)}(x) &= -\cos x \nonumber \\ f^{(4)}(x) &= \sin x, \nonumber \end{align} \\]
+\\[ f(x) = f^{(0)}(x) = \sin x, \\]
+\\[ f^{(1)}(x) = \cos x, \\]
+\\[ f^{(2)}(x) = -\sin x, \\]
+\\[ f^{(3)}(x) = -\cos x, \\]
+\\[ f^{(4)}(x) = \sin x, \\]
 
 from where it all begins over and over in a neat \\(4\\)-cycle. In particular we have \\(f^{(4n+1)}(0)=\cos0=1\\), \\(f^{(4n+3)}(0)=-\cos0=-1\\), and \\(f^{(2n)}(0)=\pm\sin0=0\\), which yields the following classic series representation for the sine-function:
 
@@ -100,11 +104,11 @@ We'll take one \\(x\\) out of the sum and use the slightly different form
 
 \\[ \frac{\sin x}{x} = \sum_{n\ge0} \frac{(-1)^n}{(2n+1)!} x^{2n} = 1 - \frac{1}{6} x^2 + \frac{1}{120} x^4 \mp \ldots \\]
 
-Half way there. Now we'll develop a product representation for \\(\sin x\\), more precisely an expression over its zeros. We used a very similar expression when we developed the [product representation for \\(\xi(s)\\)](http://localhost:8885/riemannhypothesis.info/2013/12/more-symmetry-and-another-product/). The general form is
+Half way there. Now we'll develop a product representation for \\(\sin x\\), more precisely an expression over its zeros. We used a very similar expression when we developed the [product representation for \\(\xi(s)\\)]({{<ref "posts/2013-12-01-more-symmetry-and-another-product">}}). The general form is
 
 \\[ f(x) = f(0) \prod_\varrho \left(1-\frac{x}{\varrho}\right), \\]
 
-where the product runs over all the zeros \\(\varrho\\) of \\(f\\). Euler was very much ahead of his time in using such a product and just manipulated formal expressions, much like in the [famous sum \\(1+2+3+\ldots=-\frac{1}{12}\\)](http://localhost:8885/riemannhypothesis.info/2014/02/infinity-is-worth-no-more-than-112/). It wasn't until the late 19th century, when Karl Weierstraß formally proved products like this in an attempt to verify some of the claims in Riemann's famous paper.
+where the product runs over all the zeros \\(\varrho\\) of \\(f\\). Euler was very much ahead of his time in using such a product and just manipulated formal expressions, much like in the [famous sum \\(1+2+3+\ldots=-\frac{1}{12}\\)]({{<ref "posts/2014-02-23-infinity-is-worth-no-more-than-112">}}). It wasn't until the late 19th century, when Karl Weierstraß formally proved products like this in an attempt to verify some of the claims in Riemann's famous paper.
 
 Now, remembering that \\(\sin x\\) has zeros for all \\(k\pi\\) with \\(k\in\mathbb{Z}\\), and \\(\frac{\sin x}{x}\to1\\) as \\(x\to0\\), we can write
 
