@@ -68,11 +68,11 @@ menu:
       weight: 10
     - name: About the blog
       parent: about
-      url: about/
+      url: about/blog/
       weight: 10
     - name: About me
       parent: about
-      url: about-me/
+      url: about/me/
       weight: 20
 
     - name: Projects
