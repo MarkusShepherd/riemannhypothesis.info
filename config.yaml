@@ -102,7 +102,7 @@ menu:
 
     - name: Recommended books
       identifier: books
-      url: books/
+      # url: books/
       weight: 30
 
     # - name: Tags
