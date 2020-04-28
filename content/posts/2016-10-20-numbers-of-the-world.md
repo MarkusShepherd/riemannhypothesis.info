@@ -66,17 +66,17 @@ The basic idea is the following:
 
 and so on... This can be seen as a function
 
-$$!f(n) = \text{number of letters of $n$ spelled out}.$$<!-- more -->
+\\[ f(n) = \text{number of letters of $n$ spelled out}. \\]<!-- more -->
 
 (Note that it says "number of letters" and not "length of word" – English and most other languages put spaces, commas, hyphens, and other decorations in between words for numbers, which we'll ignore in everything that follows.)
 
-As the title of the video points out, we have $$f(4)=4$$. This is called a fixed point, i.e., a point that just refuses to move when you apply the function $$f$$ to it. "Four" is the only word/number with this property in English. What's more, you can repeatedly apply the word-length-function $$f$$ on the result of itself, which yields a sort chain:
+As the title of the video points out, we have \\(f(4)=4\\). This is called a fixed point, i.e., a point that just refuses to move when you apply the function \\(f\\) to it. "Four" is the only word/number with this property in English. What's more, you can repeatedly apply the word-length-function \\(f\\) on the result of itself, which yields a sort chain:
 
 
 **one** → **three** → **five** → **four** → **four** → **four** → ...
 
 
-OK, we're kinda stuck at this point. In fact, every number will eventually get stuck in this very loop when $$f$$ is applied to it over and over.  These chains make pretty pictures:
+OK, we're kinda stuck at this point. In fact, every number will eventually get stuck in this very loop when \\(f\\) is applied to it over and over.  These chains make pretty pictures:
 
 [![Englis number-word-graph](http://localhost:8885/riemannhypothesis.info/wp-content/uploads/2016/10/en-1024x640.png)
 ](http://localhost:8885/riemannhypothesis.info/wp-content/uploads/2016/10/en.png)
@@ -238,15 +238,15 @@ Matt mentions in his video binary, i.e., spelling out 10101 as _one zero one zer
 Not strictly speaking a spelling system, yet a way of representing numbers with letters. Not surprisingly, this graph is pretty sleek – and it deserves an honourable mention since it's the one time the number one (1) actually makes it into one of our graphs.
 
 
-## Matt's $$k$$ conjecture
+## Matt's \\(k\\) conjecture
 
 
-In the video, Matt conjectures that in every language there is some threshold $$k$$ for which every value greater than $$k$$ is mapped to a value smaller than $$k$$ under that language's function $$f$$. Since most (maybe all?) languages reflect our base 10 positional number system, the information each part of the word contains when placed in front of a previous number word grows exponentially, which means that $$f$$ is essentially logarithmic, so large numbers will be rapidly "passed down" to the small numbers where all the action takes place.
+In the video, Matt conjectures that in every language there is some threshold \\(k\\) for which every value greater than \\(k\\) is mapped to a value smaller than \\(k\\) under that language's function \\(f\\). Since most (maybe all?) languages reflect our base 10 positional number system, the information each part of the word contains when placed in front of a previous number word grows exponentially, which means that \\(f\\) is essentially logarithmic, so large numbers will be rapidly "passed down" to the small numbers where all the action takes place.
 
 [![Esperanto](http://localhost:8885/riemannhypothesis.info/wp-content/uploads/2016/10/plot007.png)
 ](http://localhost:8885/riemannhypothesis.info/wp-content/uploads/2016/10/plot007.png)
 
-This plot shows the values for $$f$$ in Esperanto which I chose mostly for performance reasons. It is clear just how slow the function grows.
+This plot shows the values for \\(f\\) in Esperanto which I chose mostly for performance reasons. It is clear just how slow the function grows.
 
 
 ## Technical notes
@@ -286,7 +286,7 @@ All the graphs (in the mathematical sense, other people would maybe call them ne
 
 There might be smarter ways of doing this, but I'm very much a Neo4j novice and it certainly does the trick for me.
 
-The last plot of the function $$f(n)$$ was created with _matplotlib_, through something like this:
+The last plot of the function \\(f(n)\\) was created with _matplotlib_, through something like this:
 
 
     import matplotlib.pyplot as plt
