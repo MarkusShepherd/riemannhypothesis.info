@@ -3,8 +3,8 @@ title: About the Blog
 author: Markus Shepherd
 type: page
 date: 2013-09-26T16:21:18+00:00
-
 ---
+
 # Why this blog?
 
 The main objective of this blog is that _I_ want to understand the Riemann Hypothesis, starting from Riemann's 1859 landmark paper, and then progressing to other topics concerning prime numbers and analytic number theory. Why make it public then? Well, for one thing, it helps to write things down and express them in your own words. <a href="http://en.wikipedia.org/wiki/Docendo_discimus" target="_blank"><em>Docendo discimus</em></a>. For another thing, I'm sure there are plenty of people out there just like me: Fascinated by prime numbers, but unable to follow the vast mental leaps most mathematical authors demand from their readers.

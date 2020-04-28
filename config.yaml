@@ -43,18 +43,18 @@ Params:
 Author:
   name: Markus Shepherd
   email: markus@recommend.games
-  # facebook: markus.r.shepherd
+  facebook: markus.r.shepherd
   # googleplus: +username # or xxxxxxxxxxxxxxxxxxxxx
-  # gitlab: recommend.games
-  # github: recommend-games
-  # twitter: recommend_games
-  # reddit: MarkusShepherd
-  # linkedin: markusschepke
+  gitlab: mshepherd
+  github: MarkusShepherd
+  twitter: MarkusRShepherd
+  reddit: MarkusShepherd
+  linkedin: markusschepke
   # xing: username
-  # stackoverflow: users/2634131/markus-shepherd
+  stackoverflow: users/2634131/markus-shepherd
   # snapchat: username
-  # instagram: funny_monkey_42
-  # youtube: user/MarkusSchepke # or channel/channelname
+  instagram: funny_monkey_42
+  youtube: user/MarkusSchepke # or channel/channelname
   # soundcloud: username
   # spotify: username
   # bandcamp: username
@@ -63,18 +63,54 @@ Author:
 
 menu:
   main:
-    # - name: Recommend.Games
-    #   url: https://recommend.games/#/
-    #   weight: 10
-    - name: Blog
-      url: ''
-      weight: 20
     - name: About
-      url: page/about/
+      identifier: about
+      weight: 10
+    - name: About the blog
+      parent: about
+      url: about/
+      weight: 10
+    - name: About me
+      parent: about
+      url: about-me/
+      weight: 20
+
+    - name: Projects
+      identifier: projects
+      url: projects/
+      weight: 20
+    - name: Recommend.Games
+      parent: projects
+      url: recommend-games/
+      weight: 10
+    - name: Diris
+      parent: projects
+      url: diris/
+      weight: 20
+    - name: Mathematical papers
+      parent: projects
+      url: mathematical-papers/
       weight: 30
-    - name: Tags
-      url: tags
+    - name: Ricochet Robots solver
+      parent: projects
+      url: ricochet-robots-solver/
       weight: 40
+    - name: TeXCVMaker
+      parent: projects
+      url: texcvmaker/
+      weight: 50
+
+    - name: Recommended books
+      identifier: books
+      url: books/
+      weight: 30
+
+    # - name: Tags
+    #   url: tags/
+    #   weight: 50
+    # - name: Categories
+    #   url: categories/
+    #   weight: 60
 
 sitemap:
   changefreq: weekly
