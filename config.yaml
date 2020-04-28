@@ -77,7 +77,6 @@ menu:
 
     - name: Projects
       identifier: projects
-      url: projects/
       weight: 20
     - name: Recommend.Games
       parent: projects
@@ -100,17 +99,17 @@ menu:
       url: projects/texcvmaker/
       weight: 50
 
-    - name: Recommended books
-      identifier: books
-      # url: books/
-      weight: 30
+    # - name: Recommended books
+    #   identifier: books
+    #   weight: 30
 
     # - name: Tags
     #   url: tags/
-    #   weight: 50
+    #   weight: 40
+
     # - name: Categories
     #   url: categories/
-    #   weight: 60
+    #   weight: 50
 
 sitemap:
   changefreq: weekly
