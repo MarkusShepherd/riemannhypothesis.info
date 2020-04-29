@@ -23,7 +23,7 @@ tags:
 
 I recently spent some time on the formidable website [Numberphile](http://www.numberphile.com/) which explains mathematical ideas, some important, some recreational, in short and accessible videos. Definitely worth checking out. One of the videos that is most relevant to us explains the Riemann Hypothesis:
 
-http://youtu.be/d6c6uIyieoo
+{{< youtube d6c6uIyieoo >}}
 
 <!-- more -->
 
@@ -51,4 +51,4 @@ As it's said in the video: if you want a really, _really_ arduous way of earnin
 
 **Edit**: Just found this video where Numberphile regular [James Grime](http://singingbanana.com/) claims (towards the end) that a counterexample to the Riemann Hypothesis will not earn you the million dollars. It's certainly not where I first heard this, but clearly those statements do exist!
 
-http://youtu.be/rGo2hsoJSbo
+{{< youtube rGo2hsoJSbo >}}

@@ -21,7 +21,7 @@ One stubborn source of frustration when working with complex numbers is the fac
 
 However, there _is_ one more dimension we can exploit: time! Used in the right way, this can produce wonderful videos like this one:
 
-https://www.youtube.com/watch?v=NAMuls4q2f4
+{{< youtube NAMuls4q2f4 >}}
 
 <!-- more -->
 
