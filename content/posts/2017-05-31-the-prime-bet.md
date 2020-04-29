@@ -90,11 +90,13 @@ We'll obtain two series representations of \\(\sin x\\) and compare them with on
 
 where \\( n! \\) is the factorial function and \\(f^{(n)}(0)\\) is the \\(n\\)-th derivative of \\(f\\) evaluated at \\(x=0\\). The derivates of \\(f(x)=\sin x\\) are about as easy as they get:
 
-\\[ f(x) = f^{(0)}(x) = \sin x, \\]
-\\[ f^{(1)}(x) = \cos x, \\]
-\\[ f^{(2)}(x) = -\sin x, \\]
-\\[ f^{(3)}(x) = -\cos x, \\]
-\\[ f^{(4)}(x) = \sin x, \\]
+\\[
+f(x) = f^{(0)}(x) = \sin x, \newline
+f^{(1)}(x) = \cos x, \newline
+f^{(2)}(x) = -\sin x, \newline
+f^{(3)}(x) = -\cos x, \newline
+f^{(4)}(x) = \sin x,
+\\]
 
 from where it all begins over and over in a neat \\(4\\)-cycle. In particular we have \\(f^{(4n+1)}(0)=\cos0=1\\), \\(f^{(4n+3)}(0)=-\cos0=-1\\), and \\(f^{(2n)}(0)=\pm\sin0=0\\), which yields the following classic series representation for the sine-function:
 
