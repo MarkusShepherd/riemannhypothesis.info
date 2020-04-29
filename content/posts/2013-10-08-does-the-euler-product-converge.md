@@ -14,11 +14,11 @@ tags:
 
 Usually, I don't care too much about convergence as a general overview of the argument is what I aim at here, and otherwise I'll just trust that things "behave well". But some words concerning convergence won't harm.
 
-It's a well known fact that the harmonic series (which we shortly touched in the [previous post](http://www.riemannhypothesis.info/2013/10/euler-product-revisited/)) \\(\sum1/n\\) diverges. I think the best (though not easiest) proof of this to compare it with the corresponding integral:
+It's a well known fact that the harmonic series (which we shortly touched in the [previous post]({{<ref "posts/2013-10-06-euler-product-revisited.md">}})) \\(\sum1/n\\) diverges. I think the best (though not easiest) proof of this to compare it with the corresponding integral:
 
-\\[ \sum_{n=1}^x\frac{1}{n}>\int_1^x\frac{1}{t}\mathrm{d}t=\log x\longrightarrow\infty. \\]
+\\[ \sum_{n=1}^x \frac{1}{n} > \int_1^x \frac{1}{t} \mathrm{d}t = \log x \longrightarrow \infty. \\]
 
-(Let's pause for a moment to celebrate the first of the numerous appearances of our good friend the logarithm.)<!-- more --> Though this does require some basic calculus, it's nice because _a)_ it not only tells us that the harmonic series grows to infinity, but also _how fast_ it does so (incredibly slowly, for the record), and _b)_ the same argument works to prove that the series _converges_ if you sum over \\(1/n^s\\) with \\(s>1\\) instead. In other words, the harmonic series is _just about_ divergent (explaining the slow rate of divergence).
+(Let's pause for a moment to celebrate the first of the numerous appearances of our good friend the logarithm.) <!-- more --> Though this does require some basic calculus, it's nice because _a)_ it not only tells us that the harmonic series grows to infinity, but also _how fast_ it does so (incredibly slowly, for the record), and _b)_ the same argument works to prove that the series _converges_ if you sum over \\(1/n^s\\) with \\(s>1\\) instead. In other words, the harmonic series is _just about_ divergent (explaining the slow rate of divergence).
 
 So we have the series \\(\sum n^{-s}\\) which we know to be convergent for \\(s>1\\), and thus call \\(\zeta(s)\\) as a function. The exact same argument works for \\(\Re s>1\\) since for \\(s=\sigma+it\\) we have
 
