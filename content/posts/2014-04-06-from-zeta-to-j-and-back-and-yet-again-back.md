@@ -15,11 +15,11 @@ tags:
   - Newton
 ---
 
-We know a lot about the [\\(\zeta\\) and \\(\xi\\)-functions](http://www.riemannhypothesis.info/2013/12/more-symmetry-and-another-product/), we've learnt all about the different [prime counting functions](http://www.riemannhypothesis.info/2014/01/counting-primes-functionally/), most notably \\(J(x)\\), so it's high time we found a connection between the two. Probably not too surprisingly, the crucial link is our good friend, the Euler product
+We know a lot about the [\\(\zeta\\) and \\(\xi\\)-functions]({{<ref "posts/2013-12-01-more-symmetry-and-another-product.md">}}), we've learnt all about the different [prime counting functions]({{<ref "posts/2014-01-12-counting-primes-functionally.md">}}), most notably \\(J(x)\\), so it's high time we found a connection between the two. Probably not too surprisingly, the crucial link is our good friend, the Euler product
 
 \\[ \zeta(s)=\prod_{p}(1-p^{-s})^{-1}. \\]
 
-What we want to develop now is a version of this product that will suit us to find a formula that magically can count primes. (Remember that the Euler product is an [analytical version of the fundamental theorem of arithmetic](http://www.riemannhypothesis.info/2013/10/perfect-symmetry/), so this is a natural starting point for our search.)<!-- more -->
+What we want to develop now is a version of this product that will suit us to find a formula that magically can count primes. (Remember that the Euler product is an [analytical version of the fundamental theorem of arithmetic]({{<ref "posts/2013-10-31-perfect-symmetry.md">}}), so this is a natural starting point for our search.)<!-- more -->
 
 The only trouble is that we have a product, but analysis is all about _series_. Luckily, we have another good and reliable friend that can transform a product into a sum: the logarithm. So, by taking \\(\log\\) on both sides, we obtain something easier to handle:
 

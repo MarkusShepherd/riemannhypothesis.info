@@ -37,7 +37,7 @@ Before we proceed, let's get rid of this unnecessarily complicated factor \\(\xi
 
 \\[ \xi(0)=\pi^{-0/2}(0-1)\Pi(0/2)\zeta(0)=-\zeta(0). \\]
 
-The value of \\(\zeta(0)\\) can be obtained in a similar fashion to [that of \\(\zeta(-1)\\)](http://www.riemannhypothesis.info/2014/02/infinity-is-worth-no-more-than-112/) by interpreting it as the sum
+The value of \\(\zeta(0)\\) can be obtained in a similar fashion to [that of \\(\zeta(-1)\\)]({{<ref "posts/2014-02-23-infinity-is-worth-no-more-than-112.md">}}) by interpreting it as the sum
 
 \\[ \zeta(0)=\sum n^{-0}=1+1+1+1+1+\ldots, \\]
 

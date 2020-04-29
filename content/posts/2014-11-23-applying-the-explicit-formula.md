@@ -17,11 +17,11 @@ tags:
   - Zeta zeros
 ---
 
-It's quite some time since we [arrived](http://www.riemannhypothesis.info/2014/04/integral-madness/) at Riemann's main result, the explicit formula
+It's quite some time since we [arrived]({{<ref "posts/2014-04-13-integral-madness.md">}}) at Riemann's main result, the explicit formula
 
 \\[ J(x)=\mathrm{Li}(x)-\sum_{\Im\varrho>0}\left(\mathrm{Li}(x^\varrho)+\mathrm{Li}(x^{1-\varrho})\right)+\int_x^\infty\frac{\mathrm{d}t}{t(t^2-1)\log t}-\log2, \\]
 
-where \\(J(x)\\) is the prime power counting function introduced [even earlier](http://www.riemannhypothesis.info/2014/01/counting-primes-functionally/). It's high time we applied this!
+where \\(J(x)\\) is the prime power counting function introduced [even earlier]({{<ref "posts/2014-01-12-counting-primes-functionally.md">}}). It's high time we applied this!
 
 First, let's take a look at \\(J(x)\\) when calculating it exactly:
 
