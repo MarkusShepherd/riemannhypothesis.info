@@ -28,7 +28,9 @@ where \\(\mathbb{P}\\) denotes the set of all primes, and \\(\pi(n)\\) is the pr
 
 Don't worry too much about the exact meaning of the tilde, we will have plenty of opportunity to examine it further. For now just read it as "the left-hand side behaves similarly to the right-hand side". Now we can substitute this approximation in the calculation of the probability above, and obtain
 
-\\[ P(X\in\mathbb{P})\sim\frac{n/\log n}{n}=\frac{1}{\log n}. \\]<!-- more -->
+\\[ P(X\in\mathbb{P})\sim\frac{n/\log n}{n}=\frac{1}{\log n}. \\]
+
+<!-- more -->
 
 In other words, a randomly chosen number between \\(1\\) and \\(n\\) is prime with probability roughly \\(1/\log n\\). What's more, we can even justify saying that a number "around a large \\(n\\)" is prime with probability \\(1/\log n\\). To illustrate, take \\(10^{100}\\), a \\(1\\) followed by 100 zeros. (And that is still a small number in the context of number theory.) Below it, there are of course plenty of numbers with 99 digits or less, but obviously 90% of the numbers up to \\(10^{100}\\) have 100 digits. This means that the vast majority of the weight in the above probability lies on these numbers, justifying the statement.
 
@@ -42,7 +44,7 @@ But I've gone astray a little. We wanted to know if primes are independent. Well
 
 After examining "single" primes, we may now ask how many many twin primes there are less than a given number. This number is usually denoted by \\(\pi_2(n)\\). What we are interested in for this article is the question: _What is the probability that \\(X+2\\) is prime if we already know that \\(X\\) is prime?_ Mathematically speaking, we want to calculate (or at least estimate) the conditional probability \\(P(X+2\in\mathbb{P}|X\in\mathbb{P})\\).
 
-Two events \\(A\\) and \\(B\\) are said to be (stochastically) independent if \\(P(A|B)=P(A)\\), or in other words, if knowledge about event \\(B\\) yields no further information about event \\(A\\). ((This is not quite the accurate definition, but it's the intuition behind it. Correctly, A and B are independent iff _P_(_A_ and _B_) = _P_(_A_) _P_(_B_).))
+Two events \\(A\\) and \\(B\\) are said to be (stochastically) independent if \\(P(A|B)=P(A)\\), or in other words, if knowledge about event \\(B\\) yields no further information about event \\(A\\).[^independence]
 
 Now, by just applying the definition of how to calculate a conditional probability above, we obtain
 
@@ -71,3 +73,5 @@ This means the answer is _no_, primes are not independent. The probability of fi
 \\[ P(X+2\in\mathbb{P}|X\in\mathbb{P})\sim0.66016P(X\in\mathbb{P}). \\]
 
 Well, would have been too good to be true...
+
+[^independence]: This is not quite the accurate definition, but it's the intuition behind it. Correctly, \\(A\\) and \\(B\\) are independent iff \\(P(A~\mathrm{and}~B) = P(A) \cdot P(B)\\).

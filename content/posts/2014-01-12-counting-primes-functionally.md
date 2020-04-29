@@ -11,14 +11,15 @@ tags:
   - Möbius inversion
 ---
 
-After all this playing with the \\(\zeta\\)-function it is time to return to the overall objective of this whole exercise: counting prime numbers. The idea behind analytic number theory is that primes are unpredictable on the small scale, but actually surprising regular on the large scale. This is why we'll look at certain functions that behave pretty erratically when we look at every single value, but become smooth and "easy" to calculate once we "zoom out" and consider the global properties, the so-called asymptotic.<!-- more -->
+After all this playing with the \\(\zeta\\)-function it is time to return to the overall objective of this whole exercise: counting prime numbers. The idea behind analytic number theory is that primes are unpredictable on the small scale, but actually surprising regular on the large scale. This is why we'll look at certain functions that behave pretty erratically when we look at every single value, but become smooth and "easy" to calculate once we "zoom out" and consider the global properties, the so-called asymptotic.
+
+<!-- more -->
 
 I've mentioned the function \\(\pi(x)\\) before which is defined as the number of primes not exceeding some real \\(x\\). (Never mind the overloading of the symbol \\(\pi\\) for different and completely unrelated functions, constants, etc. It's been like that for ever, and always will be. Mathematicians are pretty stubborn.) If we can calculate \\(\pi(x)\\) exactly, we would have perfect information about the primes since the function counts the primes exactly. Theoretically. But as mentioned before, we are only interested in capturing the overall behaviour, forgetting "local" irregularities.
 
 So, what does \\(\pi(x)\\) look like? Most of the time, it is just a flat line for most of the values when the count does not change as they are not primes. At every prime value it jumps up by one step. That's it.
 
-[![Prime Counting Function](http://localhost:8885/riemannhypothesis.info/wp-content/uploads/2014/01/500px-PrimePi.svg_-300x193.png)
-](http://localhost:8885/wp-content/uploads/2014/01/500px-PrimePi.svg_.png)
+![Prime Counting Function](/img/500px-PrimePi.svg_.png)
 
 Well, almost. It turns out that it's convenient to define the value of \\(\pi(x)\\) for primes as "half the step", i.e., the value of \\(\pi(4.9)\\) would be \\(2\\), \\(\pi(5)\\) is \\(2.5\\), and \\(\pi(5.1)\\) then takes the value \\(3\\). It doesn't matter asymptotically, but the arguments that follow will go more smoothly. Yet, this is quite inconvenient to write out every time, so I will drop it for most of time, but always implicitly assume that functions at values where the argument jumps are "smoothed out".
 

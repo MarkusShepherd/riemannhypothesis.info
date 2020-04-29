@@ -15,11 +15,13 @@ tags:
   - Newton
 ---
 
-We know a lot about the [\\(\zeta\\) and \\(\xi\\)-functions](http://www.riemannhypothesis.info/2013/12/more-symmetry-and-another-product/), we've learnt all about the different [prime counting functions](http://www.riemannhypothesis.info/2014/01/counting-primes-functionally/), most notably \\(J(x)\\), so it's high time we found a connection between the two. Probably not too surprisingly, the crucial link is our good friend, the Euler product
+We know a lot about the [\\(\zeta\\) and \\(\xi\\)-functions]({{<ref "posts/2013-12-01-more-symmetry-and-another-product.md">}}), we've learnt all about the different [prime counting functions]({{<ref "posts/2014-01-12-counting-primes-functionally.md">}}), most notably \\(J(x)\\), so it's high time we found a connection between the two. Probably not too surprisingly, the crucial link is our good friend, the Euler product
 
 \\[ \zeta(s)=\prod_{p}(1-p^{-s})^{-1}. \\]
 
-What we want to develop now is a version of this product that will suit us to find a formula that magically can count primes. (Remember that the Euler product is an [analytical version of the fundamental theorem of arithmetic](http://www.riemannhypothesis.info/2013/10/perfect-symmetry/), so this is a natural starting point for our search.)<!-- more -->
+What we want to develop now is a version of this product that will suit us to find a formula that magically can count primes. (Remember that the Euler product is an [analytical version of the fundamental theorem of arithmetic]({{<ref "posts/2013-10-31-perfect-symmetry.md">}}), so this is a natural starting point for our search.)
+
+<!-- more -->
 
 The only trouble is that we have a product, but analysis is all about _series_. Luckily, we have another good and reliable friend that can transform a product into a sum: the logarithm. So, by taking \\(\log\\) on both sides, we obtain something easier to handle:
 
@@ -49,7 +51,9 @@ As you see, the only real differences are that the innermost sum is truncated at
 
 \\[ \log\zeta(s)=\sum_{n\ge1}\sum_p\frac{1}{n}s\int_{p^n}^\infty x^{-s-1} dx. \\]
 
-Yes, I know this looks even messier than before, but bare with me, it's worth it and will become clearer shortly. What we want to do next is drag the integral sign out of the sums. This is no problem in principal since integration is "transparent" under addition, but we have to keep two things in mind: First, since we talk about infinite sums, caution is in order to ensure convergence, and second, the range of integration depends on the variables we're summing over, so we need to think how this range may change. As usual, we don't pay too much attention to the question of convergence, but are just happy for others to take care of the technicalities. The second point, however, needs some thinking. The easiest way to find the right boundaries for integration and summation is to consider the different ranges and formulate common constraints. In this case we sum over all \\(n\ge1\\) (this will remain unchanged), all primes \\(p\\), and integrate over all \\(x\ge p^n\\). So, if we want to take the integral out of the sums and make the range independent of \\(p\\) and \\(n\\), we extend it to \\(0\le x\le\infty\\), but need to add the restriction \\(p^n\le x\\) then to the summation over the primes \\(p\\). That's it! We obtain:
+Yes, I know this looks even messier than before, but bare with me, it's worth it and will become clearer shortly. What we want to do next is drag the integral sign out of the sums. This is no problem in principal since integration is "transparent" under addition, but we have to keep two things in mind: First, since we talk about infinite sums, caution is in order to ensure convergence, and second, the range of integration depends on the variables we're summing over, so we need to think how this range may change. As usual, we don't pay too much attention to the question of convergence, but are just happy for others to take care of the technicalities.
+
+The second point, however, needs some thinking. The easiest way to find the right boundaries for integration and summation is to consider the different ranges and formulate common constraints. In this case we sum over all \\(n\ge1\\) (this will remain unchanged), all primes \\(p\\), and integrate over all \\(x\ge p^n\\). So, if we want to take the integral out of the sums and make the range independent of \\(p\\) and \\(n\\), we extend it to \\(0\le x\le\infty\\), but need to add the restriction \\(p^n\le x\\) then to the summation over the primes \\(p\\). That's it! We obtain:
 
 \\[ \log\zeta(s)=s\int_{0}^\infty\left(\sum_{n\ge1}\sum_{p^n\le x}\frac{1}{n}\right)x^{-s-1} dx. \\]
 

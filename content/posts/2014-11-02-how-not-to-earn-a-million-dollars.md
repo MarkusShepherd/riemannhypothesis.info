@@ -21,15 +21,15 @@ tags:
   - Zagier
 ---
 
-I recently spent some time on the formidable website [Numberphile](http://www.numberphile.com/) which explains mathematical ideas, some important, some recreational, in short and accessible videos. Definitely worth checking out. One of the videos that is most relevant to us explains the Riemann Hypothesis:
+I recently spent some time on the formidable website [Numberphile](https://www.numberphile.com/) which explains mathematical ideas, some important, some recreational, in short and accessible videos. Definitely worth checking out. One of the videos that is most relevant to us explains the Riemann Hypothesis:
 
-http://youtu.be/d6c6uIyieoo
+{{< youtube d6c6uIyieoo >}}
 
 <!-- more -->
 
-(Here is the link to the [video directly on the Numberphile webpage](http://www.numberphile.com/videos/riemann_hypothesis.html).) As [mentioned before](http://www.riemannhypothesis.info/2014/10/tossing-the-prime-coin/), it's not easy to explain the details and the beauty of the Riemann Hypothesis in few words, but I think the video definitely succeeds in compressing the essentials into 17 minutes.
+As [mentioned before]({{<ref "posts/2014-10-12-tossing-the-prime-coin.md">}}), it's not easy to explain the details and the beauty of the Riemann Hypothesis in few words, but I think the video definitely succeeds in compressing the essentials into 17 minutes.
 
-One thing that caught my attention is the discussion of the CMI's Millennium Prize. Of course, you couldn't possibly fail to mention the $1,000,000 bounty on the problem in a popular account on it, but I was surprised to hear that you could earn the money not only by _proving_ the RH, but also by _disproving_ it. I was convinced that I read somewhere that a counterexample would not earn you the prize, so I took a look at the [rules for the Millennium Prize](http://www.claymath.org/millennium-problems/rules-millennium-prizes) -- and indeed, a counterexample would be considered a solution the same way as a proof. (So where the heck did I read the opposite? I couldn't find it anymore...)
+One thing that caught my attention is the discussion of the CMI's Millennium Prize. Of course, you couldn't possibly fail to mention the $1,000,000 bounty on the problem in a popular account on it, but I was surprised to hear that you could earn the money not only by _proving_ the RH, but also by _disproving_ it. I was convinced that I read somewhere that a counterexample would not earn you the prize, so I took a look at the [rules for the Millennium Prize](https://www.claymath.org/millennium-problems/rules-millennium-prizes) -- and indeed, a counterexample would be considered a solution the same way as a proof. (So where the heck did I read the opposite? I couldn't find it anymore...)
 
 Mathematicians' believes if the RH is true or false is an interesting discussion in itself. But since we are on the topic of the money it's also an interesting thought if it's worth putting resources in calculating zeta zeros in the hope to find a counterexample, i.e., a zero off the critical line -- after all, it would earn you a million bucks.
 
@@ -39,9 +39,9 @@ In fact, there goes the anecdote that the RH is responsible for the "most expens
 
 So if you think it's a good investment to calculate zeta zeros in the hope to find a counterexample just to win the Millennium Prize -- it's a safer choice to buy a lottery ticket.
 
-The second reason is that it seems extremely unlikely to find a (hypothetical) counterexample within the reach of today's computing capabilities. There are two famous conjectures closely related to the Riemann Hypothesis which seem perfectly sound to any number you could possibly calculate, but have been proven wrong by theoretical or indirect means. The first is Gauss's conjecture that the logarithmic integral \\(\mathrm{Li}(x)\\) always overestimates the number of primes up to \\(x\\). This has been vaporised by John Edensor Littlewood in 1914 ((Based on Riemann's work, by the way, which is kind of ironic since Riemann himself mentions the conjecture towards the end of his paper and sees his results as evidence for its truth.)). In fact, Littlewood's student Stanley Skewes later found an explicit upper bound for the first violation of Gauss's conjecture -- this mind-boggling number is now known as [Skewes' Number](http://en.wikipedia.org/wiki/Skewes%27_number). ((Of course, this number has later been dwarfed by [Graham's Number](http://en.wikipedia.org/wiki/Graham%27s_number), which I couldn't fail to mention...))
+The second reason is that it seems extremely unlikely to find a (hypothetical) counterexample within the reach of today's computing capabilities. There are two famous conjectures closely related to the Riemann Hypothesis which seem perfectly sound to any number you could possibly calculate, but have been proven wrong by theoretical or indirect means. The first is Gauss's conjecture that the logarithmic integral \\(\mathrm{Li}(x)\\) always overestimates the number of primes up to \\(x\\). This has been vaporised by John Edensor Littlewood in 1914.[^littlewood] In fact, Littlewood's student Stanley Skewes later found an explicit upper bound for the first violation of Gauss's conjecture -- this mind-boggling number is now known as [Skewes' Number](https://en.wikipedia.org/wiki/Skewes%27_number).[^graham]
 
-The second is the [Mertens Conjecture](http://en.wikipedia.org/wiki/Mertens_conjecture) which I mentioned in the [previous article:](http://www.riemannhypothesis.info/2014/10/tossing-the-prime-coin/)
+The second is the [Mertens Conjecture](https://en.wikipedia.org/wiki/Mertens_conjecture) which I mentioned in the [previous article:]({{<ref "posts/2014-10-12-tossing-the-prime-coin.md">}})
 
 \\[ \left|\sum\mu(k)\right|=|M(n)|<\sqrt{n}. \\]
 
@@ -49,6 +49,9 @@ This one has been disproved by  Andrew Odlyzko and Herman te Riele by calculati
 
 As it's said in the video: if you want a really, _really_ arduous way of earning a million dollars, do number theory...
 
-**Edit**: Just found this video where Numberphile regular [James Grime](http://singingbanana.com/) claims (towards the end) that a counterexample to the Riemann Hypothesis will not earn you the million dollars. It's certainly not where I first heard this, but clearly those statements do exist!
+**Edit**: Just found this video where Numberphile regular [James Grime](https://singingbanana.com/) claims (towards the end) that a counterexample to the Riemann Hypothesis will not earn you the million dollars. It's certainly not where I first heard this, but clearly those statements do exist!
 
-http://youtu.be/rGo2hsoJSbo
+{{< youtube rGo2hsoJSbo >}}
+
+[^littlewood]: Based on Riemann's work, by the way, which is kind of ironic since Riemann himself mentions the conjecture towards the end of his paper and sees his results as evidence for its truth.
+[^graham]: Of course, this number has later been dwarfed by [Graham's Number](http://en.wikipedia.org/wiki/Graham%27s_number), which I couldn't fail to mention...

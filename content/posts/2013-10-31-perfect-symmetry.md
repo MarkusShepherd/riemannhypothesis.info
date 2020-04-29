@@ -14,7 +14,9 @@ What we have done so far works perfectly for the real numbers. The sum \\(\sum n
 
 The shame is that -- as you certainly have already heard if you still read this blog -- all the action takes place in the _critical strip_, i.e. the area just to the left of our line of convergence with \\(0\le\Re s\le1\\). Riemann showed that we can calculate values of \\(\zeta(s)\\) for \\(\Re s\le1\\) through the beautiful functional equation
 
-\\[ \zeta(1-s)=2^{1-s}\pi^{-s}\cos(\pi s/2)\Pi(s-1)\zeta(s). \\]<!-- more -->
+\\[ \zeta(1-s)=2^{1-s}\pi^{-s}\cos(\pi s/2)\Pi(s-1)\zeta(s). \\]
+
+<!-- more -->
 
 Setting aside what all of these symbols exactly mean, the important fact is that the functional equation relates \\(\zeta(1-s)\\) on the left hand side to \\(\zeta(s)\\) on the right. In other words: values of \\(\zeta(1/2+s)\\) are intimately linked to \\(\zeta(1/2-s)\\), their mirror image along the line with \\(\Re s=1/2\\). This is the famous _critical line_ that lies at the heart of the Riemann Hypothesis.
 
@@ -24,7 +26,9 @@ OK, we know how to calculate \\(\zeta(s)\\) for \\(\Re s>1\\) and, courtesy of t
 
 Those familiar with series will immediately see that this sum converges if \\(n^{-s}\\) tends to zero (cue: Leibniz criterion), which it obviously does for \\(\Re s>0\\). The resulting function is sometimes called \\(\eta(s)\\). The interesting bit is that I can express \\(\eta(s)\\) in terms of \\(\zeta(s)\\). Note that
 
-\\[ \eta(s)=(1+2^{-s}+3^{-s}+4^{-s}+5^{-s}+6^{-s}+\ldots)-2\cdot(2^{-s}+4^{-s}+6^{-s}+8^{-s}+10^{-s}+12^{-s}+\ldots) \\]
+\\[
+\eta(s) = (1+2^{-s}+3^{-s}+4^{-s}+5^{-s}+6^{-s}+\ldots) \newline
+-2 \cdot (2^{-s}+4^{-s}+6^{-s}+8^{-s}+10^{-s}+12^{-s}+\ldots) \\]
 
 The first expression in parentheses is of course just \\(\zeta(s)\\), from the second expression in parentheses we can factor out \\(2^{-s}\\) which yields \\(2^{-s}\zeta(s)\\). Summarising this, we obtain
 
@@ -34,7 +38,7 @@ In other words, if we want to know a value of \\(\zeta(s)\\) for \\(0<\Re s<1\\)
 
 Now let's take a look at all the different factors. First, \\(2^{1-s}\pi^{-s}\\) is very harmless, these are exponential functions, no zeros, no poles, very well-behaved. Next, \\(\cos(\pi s/2)\\) is the equally well-known cosine function, one of the fundamental trigonometric functions. It is analytic with simple zeros for \\(\pi s/2=\pi(k+1/2)\\) with \\(k\in\mathbb{Z}\\), that is, \\(s=2k+1\\), in other words for \\(s\\) odd, positive or negative.
 
-The function \\(\Pi(s-1)\\) is lesser known, though this is partially due to my notation. It's better known as \\(\Gamma(s)\\), and is an analytic version of the factorial ((I cannot resist to tell an anecdote from my time in Cambridge: I was giving a talk on prime generating functions, most of which involved heavy use of factorials. Unfortunately, throughout the entire talk I followed my German instincts and referred to them as _faculties_. I really wish someone would have had the courage to correct my mistake during the talk instead of politely ignoring it...)) function. That is, it satisfies the functional equation \\(\Pi(s)=s\Pi(s-1)\\). Together with \\(\Pi(0)=1\\), this implies \\( \Pi(n)=n! \\) for all non-negative integers \\(n\\). For obscure reasons, Adrien-Marie Legendre favoured the use of \\(\Gamma(s)=\Pi(s-1)\\) which in turn satisfies the far less catchy \\( \Gamma(n)=(n-1)! \\). With Carl Friedrich Gauss ((Gauss is not really one of my sources in this case, but considering his importance to mathematics in general, and the topics in question in particular, you couldn't wish for a stronger testimonial.)), Bernhard Riemann, Harold Edwards, and John Derbyshire virtually all my primary sources use the \\(\Pi(s)\\) notation for the factorial function, so I don't even need to resort to my healthy francophobia in order to resent the \\(\Gamma(s)\\) notation. On the mathematical side, the factorial function is a holomorphic function, i.e., analytic except for simple poles at the negative integers \\(s=-1,-2,-3,\ldots\\) without zeros. So the factor \\(\Pi(s-1)\\) contributes no zeros, but poles at \\(s=0,-1,-2,\ldots\\).
+The function \\(\Pi(s-1)\\) is lesser known, though this is partially due to my notation. It's better known as \\(\Gamma(s)\\), and is an analytic version of the factorial[^anecdote] function. That is, it satisfies the functional equation \\(\Pi(s)=s\Pi(s-1)\\). Together with \\(\Pi(0)=1\\), this implies \\( \Pi(n)=n! \\) for all non-negative integers \\(n\\). For obscure reasons, Adrien-Marie Legendre favoured the use of \\(\Gamma(s)=\Pi(s-1)\\) which in turn satisfies the far less catchy \\( \Gamma(n)=(n-1)! \\). With Carl Friedrich Gauss[^gauss], Bernhard Riemann, Harold Edwards, and John Derbyshire virtually all my primary sources use the \\(\Pi(s)\\) notation for the factorial function, so I don't even need to resort to my healthy francophobia in order to resent the \\(\Gamma(s)\\) notation. On the mathematical side, the factorial function is a holomorphic function, i.e., analytic except for simple poles at the negative integers \\(s=-1,-2,-3,\ldots\\) without zeros. So the factor \\(\Pi(s-1)\\) contributes no zeros, but poles at \\(s=0,-1,-2,\ldots\\).
 
 Which brings us back to \\(\zeta(s)\\). So far, we only understand the half-plane \\(\Re s>1\\) where \\(\zeta(s)\\) is analytic and has no zeros because of the Euler product. Further, it has a (simple) pole at \\(s=1\\) as the defining series of \\(\zeta(s)\\) then becomes the harmonic series. As it turns out, this poles is simple as well.
 
@@ -49,3 +53,6 @@ But I get ahead of myself. Let's summarise this long article: The series \\(\sum
 \\[ \zeta(1-s)=2^{1-s}\pi^{-s}\cos(\pi s/2)\Pi(s-1)\zeta(s). \\]
 
 It has zeros for the negative even numbers \\(s=-2,-4,-6,\ldots\\) which are so uninteresting that mathematicians refer to them as the trivial zeros. The interesting, _non-trivial zeros_ lie in the critical strip \\(0\le\Re s\le1\\) which are of paramount importance in the distribution of the primes.
+
+[^anecdote]: I cannot resist to tell an anecdote from my time in Cambridge: I was giving a talk on prime generating functions, most of which involved heavy use of factorials. Unfortunately, throughout the entire talk I followed my German instincts and referred to them as _faculties_. I really wish someone would have had the courage to correct my mistake during the talk instead of politely ignoring it...
+[^gauss]: Gauss is not really one of my sources in this case, but considering his importance to mathematics in general, and the topics in question in particular, you couldn't wish for a stronger testimonial.

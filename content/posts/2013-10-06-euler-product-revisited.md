@@ -16,7 +16,9 @@ From the [previous]({{<ref "posts/2013-09-29-in-the-beginning-there-was-eulers-f
 
 It's what has actually been suppressed in the above notation: The sequences we run through. The series runs over all natural numbers (or positive integers, if you prefer), the product runs through all prime numbers. Now, that's cool, isn't it? We found a series over the natural numbers that, as we will see later, defines a well-behaved function which is accessible to all the nice methods modern mathematics can offer, and related it to the prime numbers.
 
-In other words: Riemann's \\(\\zeta\\)-function encodes the mysteries of the primes.<!-- more -->
+In other words: Riemann's \\(\\zeta\\)-function encodes the mysteries of the primes.
+
+<!-- more -->
 
 If you are still not convinced, just remember the following: Primes have been studied for two millennia[^citation] and rather little was (and still is) known. They are defined in the simplest terms, and the smartest minds have dealt with them, yet still they seemed to remain an invulnerable fortress. Now and again, one of these smart minds has got a glimpse through a window, but no more. It's presumptuous to claim that Riemann has conquered the fortress, but at least he has found a way how to assault it. Proving the Riemann Hypothesis would mean executing the final blow and taking residence in the prime fortress.
 
@@ -32,7 +34,12 @@ where \\(|\\alpha|\<1\\). Now, as long as \\(\\Re s>1\\), we have \\(|p^{-s}|\<1
 
 Again, instead of an infinite product, we now have an infinite product of infinite series -- doesn't look easier at all. But let's just write out a few of these terms:
 
-\\[ (1^{-s}+2^{-s}+2^{-2s}+2^{-3s}+\ldots)(1^{-s}+3^{-s}+3^{-2s}+3^{-3s}+\ldots)(1^{-s}+5^{-s}+5^{-2s}+5^{-3s}+\ldots)(1^{-s}+7^{-s}+7^{-2s}+7^{-3s}+\ldots)\cdots \\]
+\\[
+(1^{-s}+2^{-s}+2^{-2s}+2^{-3s}+\ldots) \newline
+\cdot (1^{-s}+3^{-s}+3^{-2s}+3^{-3s}+\ldots) \newline
+\cdot (1^{-s}+5^{-s}+5^{-2s}+5^{-3s}+\ldots) \newline
+\cdot (1^{-s}+7^{-s}+7^{-2s}+7^{-3s}+\ldots) \cdots
+\\]
 
 Expanding the product just means picking one summand from each factor at a time, and then sum up all the possible combinations. If I always pick the first summand, I certainly get
 

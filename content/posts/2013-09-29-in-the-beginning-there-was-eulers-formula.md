@@ -18,7 +18,9 @@ I will start this blog the way Bernhard Riemann started his paper: with Euler's 
 
 \\[ \zeta(s)=\sum_{n\ge1}n^{-s}=\prod_{p}(1-p^{-s})^{-1} \\]
 
-This holds for any complex number \\(s\\) with \\(\\Re s > 1\\). If you look up a proof in any modern textbook, you will find a number technical rearrangements that end up in an examination of the absolute convergence on both sides. But actually, the formula is nothing but a fancy way of writing out the [Sieve of Eratosthenes](http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes). Let's start by writing out the sum on the left hand side:<!-- more -->
+This holds for any complex number \\(s\\) with \\(\\Re s > 1\\). If you look up a proof in any modern textbook, you will find a number technical rearrangements that end up in an examination of the absolute convergence on both sides. But actually, the formula is nothing but a fancy way of writing out the [Sieve of Eratosthenes](http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes). Let's start by writing out the sum on the left hand side:
+
+<!-- more -->
 
 \\[ \zeta(s)=1^{-s}+2^{-s}+3^{-s}+4^{-s}+5^{-s}+6^{-s}+7^{-s}+8^{-s}+9^{-s}+10^{-s}+\ldots \\]
 

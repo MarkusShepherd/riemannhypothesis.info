@@ -47,22 +47,20 @@ tags:
 
 Recently [Matt Parker](http://standupmaths.com/) uploaded a video to his [YouTube channel](https://www.youtube.com/user/standupmaths) where he discussed numbers and the words used to represent them in different languages, more precisely the length of these words:
 
-https://www.youtube.com/watch?v=LYKn0yUTIU4
+{{< youtube LYKn0yUTIU4 >}}
 
 The basic idea is the following:
 
-
-
- 	  1. _one_ has 3 letters,
- 	  2. _two_ has 3 letters,
- 	  3. _three_ has 5 letters,
- 	  4. _four_ has 4 letters,
- 	  5. _five_ has 4 letters,
- 	  6. _six_ has 3 letters,
- 	  7. _seven_ has 5 letters,
- 	  8. _eight_ has 5 letters,
- 	  9. _nine_ has 4 letters,
- 	  10. _ten_ has 3 letters,
+1. _one_ has 3 letters,
+2. _two_ has 3 letters,
+3. _three_ has 5 letters,
+4. _four_ has 4 letters,
+5. _five_ has 4 letters,
+6. _six_ has 3 letters,
+7. _seven_ has 5 letters,
+8. _eight_ has 5 letters,
+9. _nine_ has 4 letters,
+10. _ten_ has 3 letters,
 
 and so on... This can be seen as a function
 
