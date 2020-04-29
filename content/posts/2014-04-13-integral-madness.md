@@ -25,7 +25,10 @@ of the Euler product, and we know how to express \\(\xi(s)\\) as a product over 
 
 where
 
-\\[ \begin{align}\xi(s)&=\frac{1}{2}\pi^{-s/2}s(s-1)\Pi(s/2-1)\zeta(s)\nonumber\\&=\pi^{-s/2}(s-1)\Pi(s/2)\zeta(s).\nonumber\end{align} \\]
+\\[
+\xi(s) = \frac{1}{2} \pi^{-s/2} s(s-1) \Pi(s/2-1) \zeta(s) \newline
+= \pi^{-s/2} (s-1) \Pi(s/2) \zeta(s).
+\\]
 
 High time we put everything together -- the reward will be the long expected _explicit formula_ for counting primes!<!-- more -->
 
@@ -49,7 +52,7 @@ In our formula for \\(J(x)\\), we have \\(\log\zeta(s)\\), so it appears wise to
 
 If you're scared by this expression, remember that we need to plug it into our integral to get back to \\(J(x)\\). Prime research is only for the valiant. But before we can do this, we first need to transform the integral slightly (through partial integration) to
 
-\\[ J(x)=-\frac{1}{2\pi i}\frac{1}{\log x}\int_{a-i\infty}^{a+i\infty}\frac{\mathrm{d}}{\mathrm{d}s}\left(\frac{\log\zeta(s)}{s}\right)x^s\,\mathrm{d}s. \\]
+\\[ J(x)=-\frac{1}{2\pi i}\frac{1}{\log x}\int_{a-i\infty}^{a+i\infty}\frac{\mathrm{d}}{\mathrm{d}s}\left(\frac{\log\zeta(s)}{s}\right)x^s \mathrm{d}s. \\]
 
 Now we can substitute the term \\(\log\zeta(s)\\) by the above sum. Luckily, both differentiation and integration are transparent to addition, hence we can handle five (slightly) less intimidating integrals instead of one monster integral.
 
@@ -59,15 +62,15 @@ Let's start with the easiest one as an appetiser. The term \\(\frac{s}{2}\log\pi
 
 Another one, however, is still reasonably well behaved. The term \\(-\log2\\) when plugged into the integral, gives us
 
-\\[ \frac{1}{2\pi i}\frac{1}{\log x}\int_{a-i\infty}^{a+i\infty}\frac{\mathrm{d}}{\mathrm{d}s}\left(\frac{\log2}{s}\right)x^s\,\mathrm{d}s. \\]
+\\[ \frac{1}{2\pi i}\frac{1}{\log x}\int_{a-i\infty}^{a+i\infty}\frac{\mathrm{d}}{\mathrm{d}s}\left(\frac{\log2}{s}\right)x^s \mathrm{d}s. \\]
 
 If you follow all steps through, this all just boils down to \\(\log2\\) -- not too bad either.
 
 OK, now let's roll up our sleeves, and get on with the real troublemakers. The next term we consider is \\(-\log(s-1)\\) which yields the integral
 
-\\[ \frac{1}{2\pi i}\frac{1}{\log x}\int_{a-i\infty}^{a+i\infty}\frac{\mathrm{d}}{\mathrm{d}s}\left(\frac{\log(s-1)}{s}\right)x^s\,\mathrm{d}s. \\]
+\\[ \frac{1}{2\pi i}\frac{1}{\log x}\int_{a-i\infty}^{a+i\infty}\frac{\mathrm{d}}{\mathrm{d}s}\left(\frac{\log(s-1)}{s}\right)x^s \mathrm{d}s. \\]
 
-This integral is by no means easily simplified, so I'll just present you with the final version which is ((You may -- rightfully -- remark that during integration, the integrand 1/log t is undefined for t = 1 since log 1 = 0, and we cannot divide by zero. But rest assured that this is just another technicality that's easily circumvented. In fact, it's never quite sure which version an author works with: the integral that starts at 0 or the one that starts at 2. However, these two just differ by an additive constant, which is completely negligible when it comes to the asymptotic behaviour.))
+This integral is by no means easily simplified, so I'll just present you with the final version which is[^undefined]
 
 \\[ \int_0^x\frac{\mathrm{d}t}{\log t}=\mathrm{Li}(x). \\]
 
@@ -75,7 +78,7 @@ The function \\(\mathrm{Li}(x)\\) is also called the _logarithmic integral_, and
 
 All these words just to avoid admitting that I won't work out more details about the derivation of the main term at this point. Luckily, we still have more work to do anyway. Next, let's look at the sum over the roots \\(\sum\log\left(1-\frac{s}{\varrho}\right)\\). The tricky bit here is that we would like to take the sum out of differentiation and integration, but this is not so straightforward since the sum only converges conditionally and hence care needs to be taken when interchanging limits. So, we are grateful to all the smart minds who did the hard work for us, and go on exchanging the order to obtain
 
-\\[ -\sum_\varrho\frac{1}{2\pi i}\frac{1}{\log x}\int_{a-i\infty}^{a+i\infty}\frac{\mathrm{d}}{\mathrm{d}s}\left(\frac{\log(1-s/\varrho)}{s}\right)x^s\,\mathrm{d}s. \\]
+\\[ -\sum_\varrho\frac{1}{2\pi i}\frac{1}{\log x}\int_{a-i\infty}^{a+i\infty}\frac{\mathrm{d}}{\mathrm{d}s}\left(\frac{\log(1-s/\varrho)}{s}\right)x^s \mathrm{d}s. \\]
 
 I hope you see the resemblance to the expression above that led to the main term, so we will  expect a similar result. The main difference is that, as noted, the convergence of the sum is only conditional, and hence the order in which the zeros are summed does matter. So, which is the right order?
 
@@ -91,7 +94,7 @@ All this combined with some more careful analysis, we arrive at the penultimate 
 
 This leaves the term \\(-\log\Pi(s/2)\\) and the corresponding integral
 
-\\[ \frac{1}{2\pi i}\frac{1}{\log x}\int_{a-i\infty}^{a+i\infty}\frac{\mathrm{d}}{\mathrm{d}s}\left(\frac{\log\Pi(s/2)}{s}\right)x^s\,\mathrm{d}s. \\]
+\\[ \frac{1}{2\pi i}\frac{1}{\log x}\int_{a-i\infty}^{a+i\infty}\frac{\mathrm{d}}{\mathrm{d}s}\left(\frac{\log\Pi(s/2)}{s}\right)x^s \mathrm{d}s. \\]
 
 There's a series for \\(\Pi(s)\\) that translates this integral into a series of integrals, each one similar to the ones we have seen before. Summing these up again, we arrive at the final term
 
@@ -110,3 +113,5 @@ First, the "main" term. I put _main_ in quotes, because just by looking at it, o
 Second, the zeta zeros. When Gauss and Legendre conjectured their versions of the Prime Number Theorem, it was surprising to have any kind of simple _asymptotic_ for the number of primes. Riemann's result goes on step further. He did not approximate the number of primes, he computed them _exactly_. There's no uncertainty or error attached to this formula, if you diligently carry out every single calculation you will end up with the exact number of primes below \\(x\\), not just a rough guess. Now, what does it mean to carry out all calculations? The logarithmic integral \\(\mathrm{Li}(x)\\), though not quite elementary, is still quite easy to handle. The same goes for the integral and, well, \\(-\log 2\\) is just a constant. All these terms can be evaluated to any desired precision by any modern computer. The series over the zeros however is a little different. We know that there's an infinite number of zeta zeros, which means that no machine can ever find the exact value of this term, no matter how much time (or money) you spend on it. Still, a truncated series can still be used to approximate the final value, and in this respect every zero that we add to the calculation makes Riemann's formula more accurate. Note how every single zero carries its individual secret about the primes in it, and they all come together to unravel the prime mystery, like notes in a beautiful symphony that form the music together.
 
 I hope this glimpse of beauty makes up for all the toiling and sweating with the nasty integrals...
+
+[^undefined]: You may -- rightfully -- remark that during integration, the integrand \\(1/\log t\\) is undefined for \\(t = 1\\) since \\(\log 1 = 0\\), and we cannot divide by zero. But rest assured that this is just another technicality that's easily circumvented. In fact, it's never quite sure which version an author works with: the integral that starts at \\(0\\) or the one that starts at \\(2\\). However, these two just differ by an additive constant, which is completely negligible when it comes to the asymptotic behaviour.
