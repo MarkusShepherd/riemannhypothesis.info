@@ -224,11 +224,12 @@ There might be smarter ways of doing this, but I'm very much a Neo4j novice and 
 The last plot of the function \\(f(n)\\) was created with _matplotlib_, through something like this:
 
 ```python
-  import matplotlib.pyplot as plt
-  from literumi import spell
-  mx = 10**7 + 1
-  x = range(mx)
-  y = [len(spell(i, lang='eo')) for i in range(mx)]
-  plt.plot(x, y, linestyle='', marker='.')
-  plt.show()
+import matplotlib.pyplot as plt
+from literumi import spell
+
+mx = 10 ** 7 + 1
+x = range(mx)
+y = [len(spell(i, lang="eo")) for i in range(mx)]
+plt.plot(x, y, linestyle="", marker=".")
+plt.show()
 ```
