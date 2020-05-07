@@ -22,8 +22,9 @@ def count_prime_dates(start, end, date_format):
 
 start = date(2000, 1, 1)
 end = date(2399, 12, 31)
-reference = date(1707, 4, 15)
-reference_str = "Euler's birthday"
+euler_bd = "Euler's birthday", date(1707, 4, 15)
+riemann_bd = "Riemann's birthday", date(1826, 9, 17)
+reference_str, reference_date = euler_bd
 
 date_formats = (
     "%d%m",
@@ -39,8 +40,8 @@ date_formats = (
 for date_format in date_formats:
     print(
         f"* Format: `{date_format}` "
-        + f"({reference_str}: {reference.strftime(date_format)} "
-        + ("👍" if is_prime_date(reference, date_format) else "👎")
+        + f"({reference_str}: {reference_date.strftime(date_format)} "
+        + ("👍" if is_prime_date(reference_date, date_format) else "👎")
         + ") \\"
     )
     total, primes = count_prime_dates(start, end, date_format)
