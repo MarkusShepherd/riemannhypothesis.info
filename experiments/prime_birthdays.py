@@ -22,8 +22,12 @@ def count_prime_dates(start, end, date_format):
 
 start = date(2000, 1, 1)
 end = date(2399, 12, 31)
-euler_bd = "Euler's birthday", date(1707, 4, 15)
 riemann_bd = "Riemann's birthday", date(1826, 9, 17)
+riemann_dd = "Day of Riemann's death", date(1866, 7, 20)
+euler_bd = "Euler's birthday", date(1707, 4, 15)
+euler_dd = "Day of Euler's death", date(1783, 10, 18)
+gauss_bd = "Gauss's birthday", date(1777, 4, 30)
+gauss_dd = "Day of Gauss's death", date(1855, 2, 23)
 reference_str, reference_date = euler_bd
 
 date_formats = (
