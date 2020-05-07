@@ -12,6 +12,8 @@ tags:
   - Python
 ---
 
+## Overview
+
 * Format: `%d%m` (Euler's birthday: 1504 👎) \
   14.8% of dates are primes in this format! (21600 out of 146097)
 * Format: `%m%d` (Euler's birthday: 0415 👎) \
@@ -29,11 +31,13 @@ tags:
 * Format: `%Y%m%d` (Euler's birthday: 17070415 👎) \
   6.0% of dates are primes in this format! (8816 out of 146097)
 
-https://gitlab.com/snippets/1949899
+## Notes
 
-Paul Erdős -- [our epsilon arrived](https://en.wikipedia.org/wiki/Paul_Erd%C5%91s#Personality)
+* Paul Erdős -- [our epsilon arrived](https://en.wikipedia.org/wiki/Paul_Erd%C5%91s#Personality)
+* Graph probilities per year / month
+* Is there a date that is prime in all formats?
 
-**Is there a date that is prime in all formats?**
+## Further tasks
 
 Make online tool for users to examine their birthday! Primality tests:
 
@@ -42,5 +46,3 @@ Make online tool for users to examine their birthday! Primality tests:
 * https://github.com/indutny/miller-rabin
 * https://primes.utm.edu/curios/includes/primetest.php
 * https://www.mathsisfun.com/prime_numbers.html
-
-[^os]: Died in Russia 7 September 1783 Old Style
