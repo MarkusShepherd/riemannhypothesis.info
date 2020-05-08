@@ -31,7 +31,7 @@ You see how this jumps by one unit at prime values (\\(2\\), \\(3\\), \\(5\\), \
 
 Now, the point about Riemann's formula is that if you worked out diligently every single term on the right hand side exactly (and there's an infinity of smooth functions there) -- you'd end up with the same step function I just plotted!
 
-This thought always makes my brain hurt a little, so let's take it step by step. Of course, it's impossible to work _every_ term since this would require to know the value of every single zeta zero. Instead, we will look at increasingly better approximations as we add more and more zeros into the equation. Let start from what it looks like when we only use the terms without the zeta zeros, i.e., \\(\mathrm{Li}(x)\\), \\(\log2\\), and the integral:
+This thought always makes my brain hurt a little, so let's take it step by step. Of course, it's impossible to work _every_ term since this would require to know the value of every single zeta zero. Instead, we will look at increasingly better approximations as we add more and more zeros into the equation. Let start from what it looks like when we only use the terms without the zeta zeros, i.e., \\(\mathrm{Li}(x)\\), \\(\log2\\), and the integral:
 
 ![J(x) plus approximation](/img/pi2-20-0.png)
 
@@ -43,7 +43,7 @@ Note how elegantly the previously monotonous function dances in waves around the
 
 ![J(x) plus approximation with 10 zeros](/img/pi2-20-10.png)
 
-By the time we added one hundred zeros it's getting pretty hard to distinguish the two functions:
+By the time we added one hundred zeros it's getting pretty hard to distinguish the two functions:
 
 ![J(x) plus approximation with 100 zeros](/img/pi2-20-100.png)
 
