@@ -44,7 +44,7 @@ This means that while we expect \\(Y_n\\) to be \\(0\\) on average, we would exp
 
 ![Random walks](/img/random_walks.png)
 
-More precisely, we would expect values between \\(-1.96\sqrt{n}\\) and \\(1.96\sqrt{n}\\) in \\(95%\\) of the cases if we repeated the experiment over and over again. We can visualise this if we take a look at a few more random walks:
+More precisely, we would expect values between \\(-1.96\sqrt{n}\\) and \\(1.96\sqrt{n}\\) in \\(95\\%\\) of the cases if we repeated the experiment over and over again. We can visualise this if we take a look at a few more random walks:
 
 ![random_walks_distribution](/img/random_walks_distribution1.png)
 
@@ -70,7 +70,7 @@ is called the _Mertens function_, and looks like this:
 
 ![Mertens wiki](/img/mertens_wiki1.png)
 
-From this (small) sample, \\(M(n)\\) looks pretty much like one of our random walks. One crucial difference however is that about \\(40%\\) of the values are \\(0\\). (More precisely, the proportion of squarefree numbers amongst all integers converges to \\(6/\pi^2\\) which may look familiar to you as the value of \\(1/\zeta(2)\\), but this deserves an [article of its own]({{<ref "posts/2017-05-31-the-prime-bet.md">}}).) To get a better comparison we'll just skip these values in our "random prime walk": If we take the values of \\(\mu\\), can we distinguish the resulting sequence of \\(1\\) and \\(-1\\) from a sequence of random coin tosses? A small comparison actually makes it look like \\(\mu(n)\\) is rather better behaved than a coin toss (the prime walk is overlaid in red):
+From this (small) sample, \\(M(n)\\) looks pretty much like one of our random walks. One crucial difference however is that about \\(40\\%\\) of the values are \\(0\\). (More precisely, the proportion of squarefree numbers amongst all integers converges to \\(6/\pi^2\\) which may look familiar to you as the value of \\(1/\zeta(2)\\), but this deserves an [article of its own]({{<ref "posts/2017-05-31-the-prime-bet.md">}}).) To get a better comparison we'll just skip these values in our "random prime walk": If we take the values of \\(\mu\\), can we distinguish the resulting sequence of \\(1\\) and \\(-1\\) from a sequence of random coin tosses? A small comparison actually makes it look like \\(\mu(n)\\) is rather better behaved than a coin toss (the prime walk is overlaid in red):
 
 ![Random prime walk](/img/random_prime_walk.png)
 
