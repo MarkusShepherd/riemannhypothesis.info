@@ -12,6 +12,8 @@ tags:
   - Python
 ---
 
+Last year, our first epsilon[^erdos] arrived. In between all the excitement about the new life, the mathematician in me couldn't help but be proud of her date of birth: *a prime* – in the right format…
+
 ## Overview
 
 * Format: `%d%m` (Euler's birthday: 1504 👎) \
@@ -33,7 +35,6 @@ tags:
 
 ## Notes
 
-* Paul Erdős -- [our epsilon arrived](https://en.wikipedia.org/wiki/Paul_Erd%C5%91s#Personality)
 * Graph probilities per year / month
 * Is there a date that is prime in all formats?
 
@@ -46,3 +47,5 @@ Make online tool for users to examine their birthday! Primality tests:
 * https://github.com/indutny/miller-rabin
 * https://primes.utm.edu/curios/includes/primetest.php
 * https://www.mathsisfun.com/prime_numbers.html
+
+[^erdos]: The Hungarian mathematician Paul Erdős, famous for his nomadic lifestyle, myriad of conjectures, and very own expressions, used to refer to babies as [epsilons](https://en.wikipedia.org/wiki/Paul_Erd%C5%91s#Personality), a play on the Greek letter mathematicians often use to denote a very small (but positive) number.
