@@ -15,7 +15,7 @@ tags:
   - Newton
 ---
 
-We know a lot about the [\\(\zeta\\) and \\(\xi\\)-functions]({{<ref "posts/2013-12-01-more-symmetry-and-another-product.md">}}), we've learnt all about the different [prime counting functions]({{<ref "posts/2014-01-12-counting-primes-functionally.md">}}), most notably \\(J(x)\\), so it's high time we found a connection between the two. Probably not too surprisingly, the crucial link is our good friend, the Euler product
+We know a lot about the [\\(\zeta\\) and \\(\xi\\)-functions]({{<ref "posts/2013-12-01-more-symmetry-and-another-product.md">}}), we've learnt all about the different [prime counting functions]({{<ref "posts/2014-01-12-counting-primes-functionally.md">}}), most notably \\(J(x)\\), so it's high time we found a connection between the two. Probably not too surprisingly, the crucial link is our good friend, the Euler product
 
 \\[ \zeta(s)=\prod_{p}(1-p^{-s})^{-1}. \\]
 
@@ -35,7 +35,7 @@ which immediately allows us to substitute the inner term:
 
 \\[ \log\zeta(s)=\sum_p\sum_{n\ge1}\frac{1}{n}p^{-ns}. \\]
 
-With some technical acrobatics we can convince ourselves that the series are sufficiently well behaved, such that we can swap the order of summation and write instead
+With some technical acrobatics we can convince ourselves that the series are sufficiently well behaved, such that we can swap the order of summation and write instead
 
 \\[ \log\zeta(s)=\sum_{n\ge1}\sum_p\frac{1}{n}p^{-ns}. \\]
 
@@ -43,7 +43,7 @@ Granted, this doesn't look any easier or even friendly than our nice, familiar E
 
 \\[ J(x)=\sum_{n\ge1}\sum_{p^n\le x}\frac{1}{n}. \\]
 
-As you see, the only real differences are that the innermost sum is truncated at \\(p^n\le x\\), and the additional factor \\(p^{-ns}\\) in the sum. We will handle both issues by introducing analysis' killer feature: integrals. If you just exercise a little basic calculus, it's easy to see that \\(p^{-ns}\\) can be expressed as
+As you see, the only real differences are that the innermost sum is truncated at \\(p^n\le x\\), and the additional factor \\(p^{-ns}\\) in the sum. We will handle both issues by introducing analysis' killer feature: integrals. If you just exercise a little basic calculus, it's easy to see that \\(p^{-ns}\\) can be expressed as
 
 \\[ p^{-ns}=s\int_{p^n}^\infty x^{-s-1} dx. \\]
 
@@ -61,9 +61,9 @@ I've already put the parentheses in the right place, so we only need to compare 
 
 \\[ \log\zeta(s)=s\int_{0}^\infty J(x)x^{-s-1} dx. \\]
 
-John Derbyshire dubbed this formula the _Calculus Version of the Golden Key_, his nickname to the Euler product. He also gave a little more (graphical) intuition behind the deduction of the formula in chapter 19.V-VI of his book.
+John Derbyshire dubbed this formula the _Calculus Version of the Golden Key_, his nickname to the Euler product. He also gave a little more (graphical) intuition behind the deduction of the formula in chapter 19.V-VI of his book.
 
- You may still not be convinced that any of this is useful. After all, we didn't get anything other than an expression for \\(\log\zeta(s)\\) that not only contains a formula we can hardly control, but on top of it all is even hidden away in an integral. But just as we recovered \\(\mu(n)\\) from the definition of \\(J(x)\\) through a clever trick known as Möbius-inversion, we can now recover \\(J(x)\\) from the formula we found through an even more powerful tool called Fourier-inversion. Again, this would not only deserve its own article, but rather its own blog. Instead, I will just present you the result that we obtain by applying a little Fourier-magic to the _Golden Key_:
+ You may still not be convinced that any of this is useful. After all, we didn't get anything other than an expression for \\(\log\zeta(s)\\) that not only contains a formula we can hardly control, but on top of it all is even hidden away in an integral. But just as we recovered \\(\mu(n)\\) from the definition of \\(J(x)\\) through a clever trick known as Möbius-inversion, we can now recover \\(J(x)\\) from the formula we found through an even more powerful tool called Fourier-inversion. Again, this would not only deserve its own article, but rather its own blog. Instead, I will just present you the result that we obtain by applying a little Fourier-magic to the _Golden Key_:
 
 \\[ J(x)=\frac{1}{2\pi i}\int_{a-i\infty}^{a+i\infty}\log\zeta(s)x^s\frac{ds}{s}, \\]
 
