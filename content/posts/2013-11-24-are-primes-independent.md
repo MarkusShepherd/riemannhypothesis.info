@@ -32,13 +32,13 @@ Don't worry too much about the exact meaning of the tilde, we will have plenty o
 
 <!-- more -->
 
-In other words, a randomly chosen number between \\(1\\) and \\(n\\) is prime with probability roughly \\(1/\log n\\). What's more, we can even justify saying that a number "around a large \\(n\\)" is prime with probability \\(1/\log n\\). To illustrate, take \\(10^{100}\\), a \\(1\\) followed by 100 zeros. (And that is still a small number in the context of number theory.) Below it, there are of course plenty of numbers with 99 digits or less, but obviously 90% of the numbers up to \\(10^{100}\\) have 100 digits. This means that the vast majority of the weight in the above probability lies on these numbers, justifying the statement.
+In other words, a randomly chosen number between \\(1\\) and \\(n\\) is prime with probability roughly \\(1/\log n\\). What's more, we can even justify saying that a number "around a large \\(n\\)" is prime with probability \\(1/\log n\\). To illustrate, take \\(10^{100}\\), a \\(1\\) followed by 100 zeros. (And that is still a small number in the context of number theory.) Below it, there are of course plenty of numbers with 99 digits or less, but obviously 90% of the numbers up to \\(10^{100}\\) have 100 digits. This means that the vast majority of the weight in the above probability lies on these numbers, justifying the statement.
 
-In fact, we can see that we're right in interpreting \\(1/\log n\\) as the probability that \\(n\\) is prime in a much more rigorous way. In the terms of probability theory, it means that \\(1/\log n\\) is something like the density function associated with our experiment. (Actually, it would need to be normalised, but let's not concern ourselves with that.) So, in order to get the number of all primes up to \\(n\\), we would need to sum up all these weights. Since we have a continuous function, we use the integral instead, and arrive at another estimate
+In fact, we can see that we're right in interpreting \\(1/\log n\\) as the probability that \\(n\\) is prime in a much more rigorous way. In the terms of probability theory, it means that \\(1/\log n\\) is something like the density function associated with our experiment. (Actually, it would need to be normalised, but let's not concern ourselves with that.) So, in order to get the number of all primes up to \\(n\\), we would need to sum up all these weights. Since we have a continuous function, we use the integral instead, and arrive at another estimate
 
 \\[ \pi(n)\sim\int_0^n\frac{\mathrm{d}x}{\log x}. \\]
 
-The function on the right-hand side is known as \\(\mathrm{Li}(n)\\), and was already examined by Gauss. The two approximations \\(n/\log n\\) and \\(\mathrm{Li}(n)\\) for \\(\pi(n)\\) are in a certain sense equivalent (just do a partial integration, if you're curious), but as it turns out, \\(\mathrm{Li}(n)\\) is empirically more accurate, predicting the distribution of primes with very small relative errors.
+The function on the right-hand side is known as \\(\mathrm{Li}(n)\\), and was already examined by Gauss. The two approximations \\(n/\log n\\) and \\(\mathrm{Li}(n)\\) for \\(\pi(n)\\) are in a certain sense equivalent (just do a partial integration, if you're curious), but as it turns out, \\(\mathrm{Li}(n)\\) is empirically more accurate, predicting the distribution of primes with very small relative errors.
 
 But I've gone astray a little. We wanted to know if primes are independent. Well, you may point out that obviously they're not: if \\(X\\) is a (large) prime, then it is odd, so \\(X+1\\) is even and hence composite. But \\(X+2\\) may be prime, and indeed there is an abundance of examples where both \\(X\\) and \\(X+2\\) are prime. These are called _twin primes_, and it is an open question if there are infinitely many of them. (Most mathematician would believe so, and we will make use of one more qualified conjecture in just a moment.)
 
@@ -54,7 +54,7 @@ But the numerator is just the probability that we found a twin prime pair, and t
 
 \\[ P(X+2\in\mathbb{P}|X\in\mathbb{P})=\frac{\pi_2(n)/n}{\pi(n)/n}=\frac{\pi_2(n)}{\pi(n)}. \\]
 
-We could affirm the above question about independence if \\(P(X+2\in\mathbb{P}|X\in\mathbb{P})\\) would equal \\(P(X+2\in\mathbb{P})\\), or behave as \\(1/\log n\\) as well. Given our last equation, this would be the case if could approximate \\(\pi_2(n)\\) by \\(n/(\log n)^2\\). Indeed, Hardy and Littlewood conjectured for the distribution of twin primes
+We could affirm the above question about independence if \\(P(X+2\in\mathbb{P}|X\in\mathbb{P})\\) would equal \\(P(X+2\in\mathbb{P})\\), or behave as \\(1/\log n\\) as well. Given our last equation, this would be the case if could approximate \\(\pi_2(n)\\) by \\(n/(\log n)^2\\). Indeed, Hardy and Littlewood conjectured for the distribution of twin primes
 
 \\[ \pi_2(n)\sim C\frac{n}{(\log n)^2}. \\]
 
@@ -74,4 +74,4 @@ This means the answer is _no_, primes are not independent. The probability of fi
 
 Well, would have been too good to be true...
 
-[^independence]: This is not quite the accurate definition, but it's the intuition behind it. Correctly, \\(A\\) and \\(B\\) are independent iff \\(P(A~\mathrm{and}~B) = P(A) \cdot P(B)\\).
+[^independence]: This is not quite the accurate definition, but it's the intuition behind it. Correctly, \\(A\\) and \\(B\\) are independent iff \\(P(A~\mathrm{and}~B) = P(A) \cdot P(B)\\).

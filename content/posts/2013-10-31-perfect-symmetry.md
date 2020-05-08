@@ -12,7 +12,7 @@ So far, we have seen how the Euler product links the \\(\zeta\\)-function to the
 
 What we have done so far works perfectly for the real numbers. The sum \\(\sum n^{-s}\\) that defines \\(\zeta(s)\\) converges for \\(s>1\\), that's how Leonhard Euler found his product, and that's what Peter Gustav Lejeune Dirichlet used to prove the [prime number theorem in arithmetic progressions](http://en.wikipedia.org/wiki/Dirichlet's_theorem_on_arithmetic_progressions). The ingenious step In Riemann's 1859 paper was to allow for _complex_ values \\(s\\). As mentioned before, the same argument as in the real case proves that the sum converges for \\(\Re s>1\\). Since the convergence is absolute, \\(\zeta(s)\\) is analytic in this domain. If you don't know what analytic is, just read it as _well-behaved_ or, even better, _cool_.
 
-The shame is that -- as you certainly have already heard if you still read this blog -- all the action takes place in the _critical strip_, i.e. the area just to the left of our line of convergence with \\(0\le\Re s\le1\\). Riemann showed that we can calculate values of \\(\zeta(s)\\) for \\(\Re s\le1\\) through the beautiful functional equation
+The shame is that -- as you certainly have already heard if you still read this blog -- all the action takes place in the _critical strip_, i.e. the area just to the left of our line of convergence with \\(0\le\Re s\le1\\). Riemann showed that we can calculate values of \\(\zeta(s)\\) for \\(\Re s\le1\\) through the beautiful functional equation
 
 \\[ \zeta(1-s)=2^{1-s}\pi^{-s}\cos(\pi s/2)\Pi(s-1)\zeta(s). \\]
 
@@ -24,7 +24,7 @@ OK, we know how to calculate \\(\zeta(s)\\) for \\(\Re s>1\\) and, courtesy of t
 
 \\[ \sum_{n\ge1}(-1)^{n+1}n^{-s}=1-2^{-s}+3^{-s}-4^{-s}+5^{-s}-6^{-s}+\ldots \\]
 
-Those familiar with series will immediately see that this sum converges if \\(n^{-s}\\) tends to zero (cue: Leibniz criterion), which it obviously does for \\(\Re s>0\\). The resulting function is sometimes called \\(\eta(s)\\). The interesting bit is that I can express \\(\eta(s)\\) in terms of \\(\zeta(s)\\). Note that
+Those familiar with series will immediately see that this sum converges if \\(n^{-s}\\) tends to zero (cue: Leibniz criterion), which it obviously does for \\(\Re s>0\\). The resulting function is sometimes called \\(\eta(s)\\). The interesting bit is that I can express \\(\eta(s)\\) in terms of \\(\zeta(s)\\). Note that
 
 \\[
 \eta(s) = (1+2^{-s}+3^{-s}+4^{-s}+5^{-s}+6^{-s}+\ldots) \newline

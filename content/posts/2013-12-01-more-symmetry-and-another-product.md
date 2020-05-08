@@ -19,9 +19,9 @@ We've [seen]({{<ref "posts/2013-10-31-perfect-symmetry.md">}}) that \\(\zeta(s)\
 
 (Well, it still needs to be proved, but let's just assume it's correct for now.) The goal of this post is an even more symmetrical form that will yield the function \\(\xi(s)\\) which we can develop into an incredibly useful product expression.
 
-On our wish list for \\(\xi(s)\\) we find three items:
+On our wish list for \\(\xi(s)\\) we find three items:
 
-1. It's  an _entire function_, i.e., a function that's holomorphic everywhere in \\(\mathbb{C}\\) without any poles.
+1. It's  an _entire function_, i.e., a function that's holomorphic everywhere in \\(\mathbb{C}\\) without any poles.
 2. It has zeros for all non-trivial zeros of the \\(\zeta\\)-function, and no others.
 3. It's perfectly symmetrical along the critical line, i.e., it satisfies \\(\xi(1-s)=\xi(s)\\).
 
@@ -31,7 +31,7 @@ The first two requirements are fairly easy to satisfy. To make \\(\zeta(s)\\) ho
 
 \\[ \xi(s)=\zeta(s)s(s-1)\Pi(s/2-1)\hat{\xi}(s), \\]
 
-where \\(\hat{\xi}(s)\\) is just a placeholder for other factors that may be necessary achieve requirement 3, the symmetry around the critical line. We are free to choose anything for \\(\hat{\xi}(s)\\) as long as it does not interfere with the other two requirements, i.e., it cannot have zeros or poles. (Spoiler alert: Pretty much the only entire functions satisfying this are constant and exponential functions, and that's exactly what we will need.)
+where \\(\hat{\xi}(s)\\) is just a placeholder for other factors that may be necessary achieve requirement 3, the symmetry around the critical line. We are free to choose anything for \\(\hat{\xi}(s)\\) as long as it does not interfere with the other two requirements, i.e., it cannot have zeros or poles. (Spoiler alert: Pretty much the only entire functions satisfying this are constant and exponential functions, and that's exactly what we will need.)
 
 I won't try to create any further tension as we're almost there (and I suck at it anyway). Indeed, Riemann found the integral expression
 
@@ -59,7 +59,7 @@ Why shouldn't the same hold for infinitely many zeros? Holomorphic function are 
 
 \\[ \xi(s)=\xi(0)\prod_\varrho\left(1-\frac{s}{\varrho}\right), \\]
 
-where the product runs over all the zeros of \\(\xi(s)\\) which, by our construction, are exactly the non-trivial zeros of \\(\zeta(s)\\). Of course, this argumentation is all very vague, and for the above expression to be correct, we at the very least need convergence of the product. As an additional obstacle, the product converges only conditionally, i.e., the convergence depends on the ordering of the zeros. It turns out the "right" ordering is to pair every zero \\(\varrho\\) with the mirrored \\(1-\varrho\\). Recalling what we learnt [earlier]({{<ref "posts/2013-10-08-does-the-euler-product-converge.md">}}), it suffices then to prove that \\(\sum_{\Im\varrho>0}1/|\varrho(1-\varrho)|\\) converges.
+where the product runs over all the zeros of \\(\xi(s)\\) which, by our construction, are exactly the non-trivial zeros of \\(\zeta(s)\\). Of course, this argumentation is all very vague, and for the above expression to be correct, we at the very least need convergence of the product. As an additional obstacle, the product converges only conditionally, i.e., the convergence depends on the ordering of the zeros. It turns out the "right" ordering is to pair every zero \\(\varrho\\) with the mirrored \\(1-\varrho\\). Recalling what we learnt [earlier]({{<ref "posts/2013-10-08-does-the-euler-product-converge.md">}}), it suffices then to prove that \\(\sum_{\Im\varrho>0}1/|\varrho(1-\varrho)|\\) converges.
 
 Riemann states in his paper (though he makes no attempt to prove it, so neither shall I feel under any obligation to do so) that the number of zeros of \\(\zeta(s)\\) (or \\(\xi(s)\\), if you prefer) in the critical strip with imaginary part between \\(0\\) and \\(T\\) is approximately
 

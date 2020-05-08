@@ -40,7 +40,7 @@ Piece of cake after all that we know. We just note that the series that runs ove
 
 which is just the harmonic series again that we know to be convergent for \\(\Re s>1\\). Wasn't so bad, huh?
 
-For those that are still with me, let's take a look at the assertion that we just brushed over above. We want to prove that the convergence of \\(\sum|a_n|\\) implies the convergence of \\(\sum\log(1+a_n)\\). For this, we need the incredibly useful expansion
+For those that are still with me, let's take a look at the assertion that we just brushed over above. We want to prove that the convergence of \\(\sum|a_n|\\) implies the convergence of \\(\sum\log(1+a_n)\\). For this, we need the incredibly useful expansion
 
 \\[ \log(1+x)=\sum_{n\ge1}\frac{(-1)^{n+1}}{n}x^n \\]
 
@@ -56,6 +56,6 @@ We assumed that \\(\sum|a_n|\\) converges, hence \\(|a_n|\\) certainly satisfies
 
 \\[ \sum_{n\ge1}|\log(1+a_n)|\lt\sum_{n\ge1}|a_n|. \\]
 
-So the convergence of \\(\sum|a_n|\\) immediately implies the (absolute) convergence of \\(\sum\log(1+a_n)\\).
+So the convergence of \\(\sum|a_n|\\) immediately implies the (absolute) convergence of \\(\sum\log(1+a_n)\\).
 
 OK, enough of the technicalities, I promise we won't bother too much with these convergence examinations in the future.
