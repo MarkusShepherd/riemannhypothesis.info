@@ -1,4 +1,4 @@
-baseurl: https://riemannhypothesis.info/
+baseurl: https://primes.recommend.games/
 
 archetypeDir: archetypes
 assetDir: assets
@@ -17,8 +17,8 @@ theme: beautifulhugo
 metaDataFormat: yaml
 pygmentsUseClasses: true
 pygmentCodeFences: true
-disqusShortname: riemann
-googleAnalytics: UA-56725382-1
+# disqusShortname: riemann
+# googleAnalytics: UA-56725382-1
 enableRobotsTXT: true
 
 Params:
@@ -33,12 +33,17 @@ Params:
   rss: true
   comments: true
   # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
-  gcse: 013480686921635014344:vv4rosnmixf
+  # gcse: 013480686921635014344:vv4rosnmixf
   readingTime: true
   wordCount: true
   useHLJS: true
   socialShare: true
   showRelatedPosts: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
 
 Author:
   name: Markus Shepherd
@@ -48,8 +53,9 @@ Author:
   # googleplus: +username # or xxxxxxxxxxxxxxxxxxxxx
   gitlab: mshepherd
   github: MarkusShepherd
-  bitbucket: MarkusShepherd
+  # bitbucket: MarkusShepherd
   twitter: MarkusRShepherd
+  mastodon: 'tabletop.social/@markus'
   reddit: MarkusShepherd
   linkedin: markusschepke
   # xing: username
