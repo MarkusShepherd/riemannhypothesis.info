@@ -2,17 +2,30 @@
 name = "zeta-animation"
 version = "0.1.0"
 description = ""
-authors = ["Markus Schepke <markus.schepke@wolt.com>"]
-readme = "README.md"
+authors = ["Markus Shepherd <markus@recommend.games>"]
 
 [tool.poetry.dependencies]
-python = "^3.12"
-matplotlib = "^3.9.2"
-numpy = "^2.1.2"
-mpmath = "^1.3.0"
-jupyter-black = "^0.4.0"
-jupytext = "^1.16.4"
+python = "3.12.*"
 
+matplotlib = "*"
+mpmath = "*"
+numpy = "*"
+seaborn = "*"
+tqdm = "*"
+
+[tool.poetry.group.dev.dependencies]
+jupyter-black = "*"
+jupyterlab = "*"
+jupytext = "*"
+mypy = "*"
+ruff = "*"
+types-tqdm = "*"
+
+[tool.ruff]
+target-version = "py312"
+
+[tool.mypy]
+python_version = "3.12"
 
 [build-system]
 requires = ["poetry-core"]
