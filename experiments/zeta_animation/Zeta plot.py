@@ -30,7 +30,7 @@ zetas = np.array([zeta(z) for z in critical_line])
 colors = tuple(
     make_faded_colors(
         base_color="orange",
-        fade_steps=1000,
+        fade_steps=2000,
         min_opacity=0.2,
     )
 )
@@ -44,8 +44,11 @@ fig, ax = prepare_axes(
     dpi=100,
 )
 plot_complex(
-    values=zetas,
+    values=zetas[:5_000],
     colors=colors,
     ax=ax,
 )
+fig.tight_layout()
+fig.savefig("zeta_50.png")
+fig.savefig("zeta_50.svg")
 plt.show()
