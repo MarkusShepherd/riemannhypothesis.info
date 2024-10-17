@@ -5,9 +5,11 @@ from matplotlib.lines import Line2D
 import numpy as np
 import itertools
 
+COLOR_TYPE = str | tuple[float, float, float]
+
 
 def make_faded_colors(
-    base_color: str | tuple[float, float, float],
+    base_color: COLOR_TYPE,
     fade_steps: int,
     min_opacity: float = 0.0,
 ) -> Iterable[tuple[float, float, float]]:
@@ -20,7 +22,7 @@ def make_faded_colors(
 
 def _plot_line_segment(
     values: Iterable[complex],
-    color: str | tuple[float, float, float],
+    color: COLOR_TYPE,
     ax: Axes,
 ) -> list[Line2D]:
     values = tuple(values)
@@ -29,26 +31,55 @@ def _plot_line_segment(
 
 def plot_complex(
     values: Iterable[complex],
-    colors: Iterable[str | tuple[float, float, float]],
+    colors: Iterable[COLOR_TYPE],
     ax: Axes | None = None,
-    background_color: str | None = None,
-    axis_color: str | None = None,
+    background_color: COLOR_TYPE | None = None,
+    axis_color: COLOR_TYPE | None = None,
     figsize: tuple[int, int] | None = None,
 ) -> tuple[Axes, list[Line2D]]:
+    background_color = mcolors.to_rgb(background_color) if background_color else None
+    axis_color = mcolors.to_rgb(axis_color) if axis_color else None
+
     if ax is None:
         _, ax = plt.subplots(figsize=figsize, facecolor=background_color)
 
     if background_color:
         ax.set_facecolor(background_color)
+        if axis_color:
+            # Blend background color with axis color
+            grid_color = tuple(
+                (bc + ac) / 2 for bc, ac in zip(background_color, axis_color)
+            )
+            ax.grid(True, which="both", axis="both", color=grid_color)
 
     ax.spines["bottom"].set_position("zero")
     ax.spines["left"].set_position("zero")
+    ax.spines["right"].set_color("none")
+    ax.spines["top"].set_color("none")
 
     if axis_color:
         ax.spines["bottom"].set_color(axis_color)
-        ax.tick_params(axis="x", colors=axis_color)
+        ax.tick_params(axis="x", colors=axis_color, direction="inout")
         ax.spines["left"].set_color(axis_color)
-        ax.tick_params(axis="y", colors=axis_color)
+        ax.tick_params(axis="y", colors=axis_color, direction="inout")
+        ax.plot(
+            1,
+            0,
+            color=axis_color,
+            marker=">",
+            transform=ax.get_yaxis_transform(),
+            clip_on=False,
+        )
+        ax.plot(
+            0,
+            1,
+            color=axis_color,
+            marker="^",
+            transform=ax.get_xaxis_transform(),
+            clip_on=False,
+        )
+
+    ax.set_aspect("equal")
 
     values = tuple(values)
     colors = tuple(colors)
