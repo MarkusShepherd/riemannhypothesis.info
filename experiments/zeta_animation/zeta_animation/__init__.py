@@ -1,11 +1,76 @@
 from matplotlib import colors as mcolors, pyplot as plt
 from matplotlib.axes import Axes
-from typing import Iterable
+from typing import Any, Iterable
 from matplotlib.lines import Line2D
 import numpy as np
 import itertools
 
 COLOR_TYPE = str | tuple[float, float, float]
+
+
+def prepare_axes(
+    background_color: COLOR_TYPE | None = None,
+    axis_color: COLOR_TYPE | None = None,
+    grid: bool = False,
+    **fig_kw: Any,
+) -> tuple[plt.Figure, Axes]:
+    background_color = background_color or fig_kw.get("facecolor")
+    background_color = mcolors.to_rgb(background_color) if background_color else None
+    axis_color = mcolors.to_rgb(axis_color) if axis_color else None
+
+    fig_kw["facecolor"] = background_color
+    fig, ax = plt.subplots(**fig_kw)
+
+    if background_color:
+        ax.set_facecolor(background_color)
+
+    ax.spines["bottom"].set_position("zero")
+    ax.spines["left"].set_position("zero")
+    ax.spines["right"].set_color("none")
+    ax.spines["top"].set_color("none")
+
+    if axis_color:
+        ax.spines["bottom"].set_color(axis_color)
+        ax.plot(
+            1,
+            0,
+            color=axis_color,
+            marker=">",
+            transform=ax.get_yaxis_transform(),
+            clip_on=False,
+        )
+        ax.spines["left"].set_color(axis_color)
+        ax.plot(
+            0,
+            1,
+            color=axis_color,
+            marker="^",
+            transform=ax.get_xaxis_transform(),
+            clip_on=False,
+        )
+        ax.tick_params(
+            axis="both",
+            bottom=False,
+            top=False,
+            left=False,
+            right=False,
+            labelbottom=False,
+            labeltop=False,
+            labelleft=False,
+            labelright=False,
+        )
+
+    if grid:
+        grid_color = (
+            tuple((bc + ac) / 2 for bc, ac in zip(background_color, axis_color))
+            if background_color and axis_color
+            else None
+        )
+        ax.grid(True, which="major", axis="both", color=grid_color)
+
+    ax.set_aspect("equal")
+
+    return fig, ax
 
 
 def make_faded_colors(
@@ -33,53 +98,9 @@ def plot_complex(
     values: Iterable[complex],
     colors: Iterable[COLOR_TYPE],
     ax: Axes | None = None,
-    background_color: COLOR_TYPE | None = None,
-    axis_color: COLOR_TYPE | None = None,
-    figsize: tuple[int, int] | None = None,
-) -> tuple[Axes, list[Line2D]]:
-    background_color = mcolors.to_rgb(background_color) if background_color else None
-    axis_color = mcolors.to_rgb(axis_color) if axis_color else None
-
+) -> list[Line2D]:
     if ax is None:
-        _, ax = plt.subplots(figsize=figsize, facecolor=background_color)
-
-    if background_color:
-        ax.set_facecolor(background_color)
-        if axis_color:
-            # Blend background color with axis color
-            grid_color = tuple(
-                (bc + ac) / 2 for bc, ac in zip(background_color, axis_color)
-            )
-            ax.grid(True, which="both", axis="both", color=grid_color)
-
-    ax.spines["bottom"].set_position("zero")
-    ax.spines["left"].set_position("zero")
-    ax.spines["right"].set_color("none")
-    ax.spines["top"].set_color("none")
-
-    if axis_color:
-        ax.spines["bottom"].set_color(axis_color)
-        ax.tick_params(axis="x", colors=axis_color, direction="inout")
-        ax.spines["left"].set_color(axis_color)
-        ax.tick_params(axis="y", colors=axis_color, direction="inout")
-        ax.plot(
-            1,
-            0,
-            color=axis_color,
-            marker=">",
-            transform=ax.get_yaxis_transform(),
-            clip_on=False,
-        )
-        ax.plot(
-            0,
-            1,
-            color=axis_color,
-            marker="^",
-            transform=ax.get_xaxis_transform(),
-            clip_on=False,
-        )
-
-    ax.set_aspect("equal")
+        _, ax = prepare_axes()
 
     values = tuple(values)
     colors = tuple(colors)
@@ -100,4 +121,4 @@ def plot_complex(
     ):
         artists.extend(_plot_line_segment(pair, color, ax))
 
-    return ax, artists
+    return artists
