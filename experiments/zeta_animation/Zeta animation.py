@@ -16,7 +16,9 @@
 # %%
 import jupyter_black
 import numpy as np
+from matplotlib import animation, pyplot as plt
 from mpmath import zeta
+from tqdm import trange
 from zeta_animation import make_faded_colors, plot_complex
 
 jupyter_black.load()
@@ -26,16 +28,41 @@ critical_line = np.array(
     [complex(0.5, t) for t in np.linspace(start=0, stop=200, num=20_000)]
 )
 zetas = np.array([zeta(z) for z in critical_line])
+colors = tuple(
+    make_faded_colors(
+        base_color="orange",
+        fade_steps=300,
+        min_opacity=0.2,
+    )
+)
 
 # %%
-colors = make_faded_colors(
-    base_color="orange",
-    fade_steps=300,
-    min_opacity=0.2,
-)
-plot_complex(
+ax, lines = plot_complex(
     values=zetas[:5_000],
     colors=colors,
     background_color="black",
     axis_color="darkgrey",
 )
+plt.show()
+
+# %%
+fig, ax = plt.subplots(facecolor="black")
+steps = len(zetas)
+artists = (
+    plot_complex(
+        values=zetas[:i],
+        colors=colors,
+        background_color="black",
+        axis_color="darkgrey",
+        ax=ax,
+    )[1]
+    for i in trange(1, steps + 1, 8)
+)
+ani = animation.ArtistAnimation(
+    fig=fig,
+    artists=tuple(artists),
+    interval=40,
+    blit=True,
+    repeat=False,
+)
+ani.save("movie.mp4")

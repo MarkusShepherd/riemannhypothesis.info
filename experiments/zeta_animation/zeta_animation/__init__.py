@@ -1,6 +1,7 @@
 from matplotlib import colors as mcolors, pyplot as plt
 from matplotlib.axes import Axes
 from typing import Iterable
+from matplotlib.lines import Line2D
 import numpy as np
 import itertools
 
@@ -10,19 +11,20 @@ def make_faded_colors(
     fade_steps: int,
     min_opacity: float = 0.0,
 ) -> Iterable[tuple[float, float, float]]:
-    base_color = np.array(mcolors.to_rgb(base_color))
+    base_color_rgb = np.array(mcolors.to_rgb(base_color))
     return (
-        tuple(base_color * factor) for factor in np.linspace(min_opacity, 1, fade_steps)
+        tuple(base_color_rgb * factor)
+        for factor in np.linspace(min_opacity, 1, fade_steps)
     )
 
 
 def _plot_line_segment(
     values: Iterable[complex],
-    color: tuple[float, float, float, float],
+    color: str | tuple[float, float, float],
     ax: Axes,
-) -> None:
+) -> list[Line2D]:
     values = tuple(values)
-    ax.plot([z.real for z in values], [z.imag for z in values], color=color)
+    return ax.plot([z.real for z in values], [z.imag for z in values], color=color)
 
 
 def plot_complex(
@@ -32,7 +34,7 @@ def plot_complex(
     background_color: str | None = None,
     axis_color: str | None = None,
     figsize: tuple[int, int] | None = None,
-) -> Axes:
+) -> tuple[Axes, list[Line2D]]:
     if ax is None:
         _, ax = plt.subplots(figsize=figsize, facecolor=background_color)
 
@@ -56,11 +58,15 @@ def plot_complex(
     pairs = itertools.pairwise(faded_values)
     num_fades_pairs = len(faded_values) - 1
 
+    artists = []
+
     if non_faded_values:
-        _plot_line_segment(non_faded_values, colors[0], ax)
+        artists.extend(_plot_line_segment(non_faded_values, colors[0], ax))
 
     for pair, color in zip(
         pairs,
         colors[-num_fades_pairs:],
     ):
-        _plot_line_segment(pair, color, ax)
+        artists.extend(_plot_line_segment(pair, color, ax))
+
+    return ax, artists
