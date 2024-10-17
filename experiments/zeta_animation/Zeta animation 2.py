@@ -32,7 +32,7 @@ colors = tuple(
     make_faded_colors(
         base_color="orange",
         fade_steps=2000,
-        min_opacity=0.1,
+        min_opacity=0.2,
     )
 )
 
@@ -56,4 +56,4 @@ ani = animation.ArtistAnimation(
     blit=True,
     repeat=False,
 )
-ani.save("zeta.mp4")
+ani.save("zeta_4k.mp4")

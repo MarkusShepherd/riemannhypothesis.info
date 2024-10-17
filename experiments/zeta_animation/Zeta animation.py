@@ -31,7 +31,7 @@ zetas = np.array([zeta(z) for z in critical_line])
 colors = tuple(
     make_faded_colors(
         base_color="orange",
-        fade_steps=300,
+        fade_steps=1000,
         min_opacity=0.2,
     )
 )
@@ -65,4 +65,4 @@ ani = animation.ArtistAnimation(
     blit=True,
     repeat=False,
 )
-ani.save("movie.mp4")
+ani.save("movie.mp4", dpi=300)
