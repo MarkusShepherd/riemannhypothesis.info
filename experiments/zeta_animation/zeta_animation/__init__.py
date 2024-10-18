@@ -224,9 +224,9 @@ def animate_complex_function(
     num_frames = int(duration_s * fps)
 
     x_min, x_max = min(z.real for z in values), max(z.real for z in values)
-    ax.set_xlim(float(x_min), float(x_max))
+    ax.set_xlim(float(x_min - 0.4), float(x_max + 0.4))
     y_min, y_max = min(z.imag for z in values), max(z.imag for z in values)
-    ax.set_ylim(float(y_min), float(y_max))
+    ax.set_ylim(float(y_min - 0.4), float(y_max + 0.4))
     fig.tight_layout()
 
     writer = manimation.FFMpegWriter(fps=fps, codec="libx264", bitrate=35_000)
