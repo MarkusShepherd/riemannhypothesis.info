@@ -1,13 +1,14 @@
-from os import PathLike
-from matplotlib import colors as mcolors, pyplot as plt
+from pathlib import Path
+from matplotlib import animation as manimation, colors as mcolors, pyplot as plt
 from matplotlib.axes import Axes
 from typing import Any, Callable, Iterable
 from matplotlib.lines import Line2D
+from tqdm import tqdm
 import numpy as np
 import itertools
 
 COLOR_TYPE = str | tuple[float, float, float]
-PATH_LIKE = str | PathLike
+PATH_LIKE = str | Path
 
 
 def prepare_axes(
@@ -175,3 +176,77 @@ def plot_complex_function(
         plt.show()
 
     return fig, ax
+
+
+def animate_complex_function(
+    *,
+    function: Callable[[complex], complex],
+    z_start: complex,
+    z_end: complex,
+    background_color: COLOR_TYPE,
+    axis_color: COLOR_TYPE,
+    plot_steps: int,
+    fade_steps: int,
+    line_base_color: COLOR_TYPE,
+    min_opacity: float = 0.0,
+    width: int,
+    height: int,
+    dpi: int = 100,
+    duration_s: float,
+    fps: int = 24,
+    out_path: PATH_LIKE,
+):
+    fig, ax = prepare_axes(
+        background_color=background_color,
+        axis_color=axis_color,
+        grid=False,
+        figsize=(width / dpi, height / dpi),
+        dpi=dpi,
+    )
+
+    values = tuple(
+        tqdm(
+            iterable=(
+                function(z)
+                for z in np.linspace(start=z_start, stop=z_end, num=plot_steps)
+            ),
+            total=plot_steps,
+            desc="Calculating function values",
+        )
+    )
+    colors = tuple(
+        make_faded_colors(
+            base_color=line_base_color,
+            fade_steps=fade_steps,
+            min_opacity=min_opacity,
+        )
+    )
+    num_frames = int(duration_s * fps)
+
+    artists = tqdm(
+        iterable=(
+            plot_complex(values=values[:i], colors=colors, ax=ax)
+            for i in np.linspace(1, len(values) + 1, num_frames, dtype=int)
+        ),
+        total=num_frames,
+        desc="Generating frames",
+    )
+
+    animation = manimation.ArtistAnimation(
+        fig=fig,
+        artists=tuple(artists),
+        interval=1000 / fps,
+        blit=True,
+        repeat=False,
+    )
+
+    writer = manimation.FFMpegWriter(fps=fps, codec="libx264", bitrate=35_000)
+    with tqdm(total=num_frames, desc="Rendering animation") as progress_bar:
+        animation.save(
+            filename=out_path,
+            writer=writer,
+            dpi=dpi,
+            progress_callback=lambda *_: progress_bar.update(1),
+        )
+
+    plt.close(fig)
