@@ -142,7 +142,7 @@ def main():
     out_path = Path(args.out_path or f"{args.function}_animation.mp4").resolve()
 
     LOGGER.info(
-        "Plotting function %s from %g+%gi to %g+%gi",
+        "Plotting function %s from %g%+gi to %g%+gi",
         args.function,
         args.z_start.real,
         args.z_start.imag,
