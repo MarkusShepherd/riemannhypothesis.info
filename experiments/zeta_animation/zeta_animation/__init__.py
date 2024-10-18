@@ -223,30 +223,20 @@ def animate_complex_function(
     )
     num_frames = int(duration_s * fps)
 
-    artists = tqdm(
-        iterable=(
-            plot_complex(values=values[:i], colors=colors, ax=ax)
-            for i in np.linspace(1, len(values) + 1, num_frames, dtype=int)
-        ),
-        total=num_frames,
-        desc="Generating frames",
-    )
-
-    animation = manimation.ArtistAnimation(
-        fig=fig,
-        artists=tuple(artists),
-        interval=1000 / fps,
-        blit=True,
-        repeat=False,
-    )
+    x_min, x_max = min(z.real for z in values), max(z.real for z in values)
+    ax.set_xlim(float(x_min), float(x_max))
+    y_min, y_max = min(z.imag for z in values), max(z.imag for z in values)
+    ax.set_ylim(float(y_min), float(y_max))
+    fig.tight_layout()
 
     writer = manimation.FFMpegWriter(fps=fps, codec="libx264", bitrate=35_000)
-    with tqdm(total=num_frames, desc="Rendering animation") as progress_bar:
-        animation.save(
-            filename=out_path,
-            writer=writer,
-            dpi=dpi,
-            progress_callback=lambda *_: progress_bar.update(1),
-        )
+    with writer.saving(fig=fig, outfile=out_path, dpi=dpi):
+        for i in tqdm(
+            iterable=np.linspace(1, len(values) + 1, num_frames, dtype=int),
+            total=num_frames,
+            desc="Rendering frames",
+        ):
+            plot_complex(values=values[:i], colors=colors, ax=ax)
+            writer.grab_frame()
 
     plt.close(fig)
