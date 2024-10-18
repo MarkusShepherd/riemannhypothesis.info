@@ -15,40 +15,25 @@
 
 # %%
 import jupyter_black
-import numpy as np
-from matplotlib import pyplot as plt
 from mpmath import zeta
-from zeta_animation import make_faded_colors, plot_complex, prepare_axes
+from zeta_animation import plot_complex_function
 
 jupyter_black.load()
 
 # %%
-critical_line = np.array(
-    [complex(0.5, t) for t in np.linspace(start=0, stop=200, num=20_000)]
-)
-zetas = np.array([zeta(z) for z in critical_line])
-colors = tuple(
-    make_faded_colors(
-        base_color="orange",
-        fade_steps=2000,
-        min_opacity=0.2,
-    )
-)
-
-# %%
-fig, ax = prepare_axes(
+_, _ = plot_complex_function(
+    function=zeta,
+    z_start=0.5,
+    z_end=0.5 + 50j,
     background_color="black",
     axis_color="darkgrey",
-    grid=False,
-    figsize=(38.4, 21.6),
+    plot_steps=5_000,
+    fade_steps=2_000,
+    line_base_color="orange",
+    min_opacity=0.2,
+    width=3840,
+    height=2160,
     dpi=100,
+    out_path=("zeta_50.png", "zeta_50.svg"),
+    show=True,
 )
-plot_complex(
-    values=zetas[:5_000],
-    colors=colors,
-    ax=ax,
-)
-fig.tight_layout()
-fig.savefig("zeta_50.png")
-fig.savefig("zeta_50.svg")
-plt.show()

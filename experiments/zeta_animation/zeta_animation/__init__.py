@@ -1,14 +1,17 @@
+from os import PathLike
 from matplotlib import colors as mcolors, pyplot as plt
 from matplotlib.axes import Axes
-from typing import Any, Iterable
+from typing import Any, Callable, Iterable
 from matplotlib.lines import Line2D
 import numpy as np
 import itertools
 
 COLOR_TYPE = str | tuple[float, float, float]
+PATH_LIKE = str | PathLike
 
 
 def prepare_axes(
+    *,
     background_color: COLOR_TYPE | None = None,
     axis_color: COLOR_TYPE | None = None,
     grid: bool = False,
@@ -74,6 +77,7 @@ def prepare_axes(
 
 
 def make_faded_colors(
+    *,
     base_color: COLOR_TYPE,
     fade_steps: int,
     min_opacity: float = 0.0,
@@ -95,6 +99,7 @@ def _plot_line_segment(
 
 
 def plot_complex(
+    *,
     values: Iterable[complex],
     colors: Iterable[COLOR_TYPE],
     ax: Axes | None = None,
@@ -122,3 +127,51 @@ def plot_complex(
         artists.extend(_plot_line_segment(pair, color, ax))
 
     return artists
+
+
+def plot_complex_function(
+    *,
+    function: Callable[[complex], complex],
+    z_start: complex,
+    z_end: complex,
+    background_color: COLOR_TYPE,
+    axis_color: COLOR_TYPE,
+    plot_steps: int,
+    fade_steps: int,
+    line_base_color: COLOR_TYPE,
+    min_opacity: float = 0.0,
+    width: int,
+    height: int,
+    dpi: int = 100,
+    out_path: PATH_LIKE | Iterable[PATH_LIKE] | None = None,
+    show: bool = False,
+) -> tuple[plt.Figure, Axes]:
+    fig, ax = prepare_axes(
+        background_color=background_color,
+        axis_color=axis_color,
+        grid=False,
+        figsize=(width / dpi, height / dpi),
+        dpi=dpi,
+    )
+
+    values = (
+        function(z) for z in np.linspace(start=z_start, stop=z_end, num=plot_steps)
+    )
+    colors = make_faded_colors(
+        base_color=line_base_color,
+        fade_steps=fade_steps,
+        min_opacity=min_opacity,
+    )
+
+    plot_complex(values=values, colors=colors, ax=ax)
+    fig.tight_layout()
+
+    if out_path is not None:
+        out_paths = (out_path,) if isinstance(out_path, PATH_LIKE) else out_path
+        for path in out_paths:
+            fig.savefig(path, dpi=dpi)
+
+    if show:
+        plt.show()
+
+    return fig, ax
