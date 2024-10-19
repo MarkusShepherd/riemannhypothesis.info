@@ -7,7 +7,7 @@ from tqdm import tqdm
 import numpy as np
 import itertools
 
-COLOR_TYPE = str | tuple[float, float, float]
+COLOR_TYPE = str | tuple[float, float, float] | tuple[float, float, float, float]
 PATH_LIKE = str | Path
 
 
@@ -178,6 +178,14 @@ def plot_complex_function(
     return fig, ax
 
 
+def _pad_tuple(tuple_: tuple, length: int) -> tuple:
+    if length <= 0:
+        return ()
+    if length <= len(tuple_):
+        return tuple_[-length:]
+    return (tuple_[0],) * (length - len(tuple_)) + tuple_
+
+
 def animate_complex_function(
     *,
     function: Callable[[complex], complex],
@@ -203,6 +211,7 @@ def animate_complex_function(
         figsize=(width / dpi, height / dpi),
         dpi=dpi,
     )
+    fig.tight_layout()
 
     values = tuple(
         tqdm(
@@ -223,20 +232,41 @@ def animate_complex_function(
     )
     num_frames = int(duration_s * fps)
 
-    x_min, x_max = min(z.real for z in values), max(z.real for z in values)
-    ax.set_xlim(float(x_min - 0.4), float(x_max + 0.4))
-    y_min, y_max = min(z.imag for z in values), max(z.imag for z in values)
-    ax.set_ylim(float(y_min - 0.4), float(y_max + 0.4))
-    fig.tight_layout()
+    lines = [
+        _plot_line_segment(
+            values=pair,
+            color=(0, 0, 0, 0),
+            ax=ax,
+        )[0]
+        for pair in itertools.pairwise(tqdm(values, desc="Plotting lines"))
+    ]
 
+    def update(
+        frame: int,
+        lines: list[Line2D] = lines,
+        fade_colors: tuple[tuple[float, float, float], ...] = colors,
+    ) -> list[Line2D]:
+        lines_to_update = lines[:frame]
+        colors_to_update = _pad_tuple(fade_colors, len(lines_to_update))
+        for line, color in zip(lines_to_update, colors_to_update):
+            line.set_color(color)
+        return lines_to_update
+
+    animation = manimation.FuncAnimation(
+        fig=fig,
+        func=update,
+        init_func=lambda: lines,
+        frames=np.linspace(1, len(values) + 1, num_frames, dtype=int),
+        interval=1_000 / fps,
+        blit=True,
+    )
     writer = manimation.FFMpegWriter(fps=fps, codec="libx264", bitrate=35_000)
-    with writer.saving(fig=fig, outfile=out_path, dpi=dpi):
-        for i in tqdm(
-            iterable=np.linspace(1, len(values) + 1, num_frames, dtype=int),
-            total=num_frames,
-            desc="Rendering frames",
-        ):
-            plot_complex(values=values[:i], colors=colors, ax=ax)
-            writer.grab_frame()
+    with tqdm(total=num_frames, desc="Rendering frames") as pbar:
+        animation.save(
+            out_path,
+            writer=writer,
+            dpi=dpi,
+            progress_callback=lambda *_: pbar.update(1),
+        )
 
     plt.close(fig)
