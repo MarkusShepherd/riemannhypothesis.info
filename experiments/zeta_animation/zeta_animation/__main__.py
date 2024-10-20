@@ -57,6 +57,11 @@ def _parse_args() -> argparse.Namespace:
         help="The number of steps to fade the lines",
     )
     parser.add_argument(
+        "--visible-steps",
+        type=int,
+        help="The number of steps to keep the lines visible (default: all)",
+    )
+    parser.add_argument(
         "--base-color",
         "-c",
         type=str,
@@ -165,6 +170,7 @@ def main():
         axis_color=args.axis_color,
         plot_steps=args.plot_steps,
         fade_steps=args.fade_steps,
+        visible_steps=args.visible_steps,
         line_base_color=args.base_color,
         min_opacity=args.min_opacity,
         width=args.width,
